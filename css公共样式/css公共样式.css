@@ -1,0 +1,79 @@
+/*css公共样式*/
+
+/*按钮样式*/
+.loginButton {
+	display: inline-block;
+	color: #000;
+	background-color: #fdd223;
+	padding: 0 25px; 
+	font-size: 13px;
+	border-radius: 20px;
+}
+.aboutusButton {
+	display: inline-block;
+	color: #162C5A;
+	background-color: #34D0D1;
+	padding: 0 20px; 
+	font-size: 13px;
+	border-radius: 20px;
+
+}
+.projectButton{
+	display: inline-block;
+	color: #000;
+	background-color: #fdd223;
+	padding: 0 25px; 
+	font-size: 13px;
+	border-radius: 20px;
+}
+.learnButton {
+	display: inline-block;
+	color: #162C5A;
+	background-color: #34D0D1;
+	padding: 0 20px; 
+	font-size: 13px;
+	border-radius: 20px;
+}
+.blogButton{
+	display: inline-block;
+	color: #000;
+	background-color: #fdd223;
+	padding: 0 25px; 
+	font-size: 13px;
+	border-radius: 20px;
+}
+.newsButton{
+	display: inline-block;
+	color: #162C5A;
+	background-color: #34D0D1;
+	padding: 0 20px; 
+	font-size: 13px;
+	border-radius: 20px;
+}
+.sendButton{
+	display: inline-block;
+	color: #000;
+	background-color: #fdd223;
+	padding: 0 25px; 
+	font-size: 13px;
+	border-radius: 20px;
+}
+
+/*波浪边框样式*/
+
+.waveBorder {
+	margin-top: 10px;
+    width: 500px; height: 200px;
+    background-color: #34D0D1;
+    position: relative;
+}
+.waveBorder:after {
+    content: '';
+    position: absolute;
+    height: 50px;
+    left:0 ; 
+    right: 0;
+    bottom: -10px;
+    background: radial-gradient(20px 15px ellipse at top, #34D0D1 10px, transparent 11px);
+    background-size: 20px 20px;
+}
