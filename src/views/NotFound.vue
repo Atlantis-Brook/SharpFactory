@@ -39,7 +39,7 @@ export default {
 }
 
 img{
-    animation: 1s picAct alternate infinite;
+    animation: 0.8s picAct alternate infinite;
     user-select: none;
     border-radius: 50%;
     width: 136px;
@@ -61,7 +61,7 @@ h2{
 
 @keyframes picAct{
     0%      {}
-    100%    {margin-bottom: -12px}
+    100%    {margin-bottom: -14px}
 }
 
 </style>
