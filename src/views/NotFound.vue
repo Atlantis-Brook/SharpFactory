@@ -33,12 +33,13 @@ export default {
     align-items: center;
 }
 .middle{
-    line-height: 110px;
+    line-height: 100px;
     margin-top: -100px;
     text-align: center;
 }
 
 img{
+    animation: 1s picAct alternate infinite;
     user-select: none;
     border-radius: 50%;
     width: 136px;
@@ -52,6 +53,15 @@ h1{
 
 h2{
     color: #bdc3c7;
+}
+
+/*
+    404表情微动动画
+*/
+
+@keyframes picAct{
+    0%      {}
+    100%    {margin-bottom: -12px}
 }
 
 </style>
