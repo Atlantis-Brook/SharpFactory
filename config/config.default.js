@@ -16,15 +16,30 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1554459182467_3877';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['login', 'noFound'];
 
-  // add your user config here
-  const userConfig = {
-    // myAppName: 'egg',
+   // 添加 view 配置
+   config.view = {
+    defaultViewEngine: 'nunjucks',
+    mapping: {
+      '.html': 'nunjucks',
+    },
+    cache: false
   };
 
-  return {
-    ...config,
-    ...userConfig,
+  //允许请求
+  config.cors = {
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+    credentials: true,
   };
+
+  // 网络安全
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+    domainWhiteList: ['*'],
+  };
+  return config;
+
 };
