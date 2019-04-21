@@ -21,6 +21,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 p {
   margin: 0;
+  margin-bottom: 30px;
 }
 hr {
   display: block;
@@ -80,6 +81,9 @@ hr.vertical {
 }
 .cut-line {
   /* TODO */
+  height: 6px;
+  width: 46px;
+  background-color: #fdd223;
 }
 
 /*按钮样式*/
