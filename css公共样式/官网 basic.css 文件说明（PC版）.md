@@ -1,0 +1,48 @@
+# 官网 basic.css 文件说明（PC版）
+
+##  html 写法规范
+
+`.warpper`的宽度是`1200px`，`.container`的宽度是`1104px`，所有内容要包含在`.warpper`中，所有宽度为`1104px`的`div`加一个`.container`的类。
+
+以下代码作为参考：
+
+```html
+<body>
+	<div class="warpper">
+        <header>
+        	// 头部
+            <nav></nav>
+        </header>
+        <div class="container">
+            // 内容
+        </div>
+    </div>
+</body>
+```
+
+
+
+## CSS Reset
+
++ `hr` ：分割线样式重置，页面所有分割线使用`hr` 
+
+
+
+## 类的说明
+
++ `.button`：按钮
++ `.wave-border`：波浪边框div
++ `h1.title`：24px
++ `h2.title`：20px
++ `h3.title` ：18px
+
+
+
+##  TODO
+
+1. nav 的  a 链接下的波浪线
+2. 竖直分割线
+3. 小分割线
+4. arrow(用字体图标做)
+5. 分页器
+

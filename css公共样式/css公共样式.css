@@ -1,79 +1,135 @@
+/* CSS Reset */
+html {
+  min-width: 1200px;
+  font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  font-size: 14px;
+  color: #162c5a;
+  line-height: 1.5em;
+  text-align: center;
+}
+body {
+  margin: 0;
+}
+a {
+  color: #162c5a;
+  text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  margin: 1em 0;
+  padding: 0;
+  border-top: 1px dashed transparent;
+  background: linear-gradient(#fff,#fff) padding-box,
+  repeating-linear-gradient(-45deg,#ccc 0, #ccc 0.35em,#fff 0,#fff 0.65em);
+}
+
 /*css公共样式*/
 
-/*按钮样式*/
-.loginButton {
-	display: inline-block;
-	color: #000;
-	background-color: #fdd223;
-	padding: 0 25px; 
-	font-size: 13px;
-	border-radius: 20px;
+/* 容器 */
+.wrapper {
+  width: 1200px;
+  min-height: 100vh;
 }
-.aboutusButton {
-	display: inline-block;
-	color: #162C5A;
-	background-color: #34D0D1;
-	padding: 0 20px; 
-	font-size: 13px;
-	border-radius: 20px;
+.container {
+  width: 1104px;
+}
 
+/* 标题 */
+h1.title {
+  font-size: 24px;
 }
-.projectButton{
-	display: inline-block;
-	color: #000;
-	background-color: #fdd223;
-	padding: 0 25px; 
-	font-size: 13px;
-	border-radius: 20px;
+h2.title {
+  font-size: 20px;
 }
-.learnButton {
-	display: inline-block;
-	color: #162C5A;
-	background-color: #34D0D1;
-	padding: 0 20px; 
-	font-size: 13px;
-	border-radius: 20px;
+h3.title {
+  font-size: 18px;
 }
-.blogButton{
-	display: inline-block;
-	color: #000;
-	background-color: #fdd223;
-	padding: 0 25px; 
-	font-size: 13px;
-	border-radius: 20px;
+
+/* nav的a链接 */
+nav a {
+  color: #fff;
 }
-.newsButton{
-	display: inline-block;
-	color: #162C5A;
-	background-color: #34D0D1;
-	padding: 0 20px; 
-	font-size: 13px;
-	border-radius: 20px;
+
+nav a:hover {
+  /* TODO */
+  /* border-bottom:  */
 }
-.sendButton{
-	display: inline-block;
-	color: #000;
-	background-color: #fdd223;
-	padding: 0 25px; 
-	font-size: 13px;
-	border-radius: 20px;
+
+/* 分割线 */
+hr.vertical {
+  /* TODO */
+  display: block;
+  height: 1px;
+  border: 0;
+  margin: 1em 0;
+  padding: 0;
+  border-left: 1px dashed transparent;
+  background: linear-gradient(#fff,#fff) padding-box,
+  repeating-linear-gradient(-45deg,#ccc 0, #ccc 0.35em,#fff 0,#fff 0.65em);
+  transform: rotate(90deg);
+}
+.cut-line {
+  /* TODO */
+}
+
+/*按钮样式*/
+.button {
+  display: inline-block;
+  background-color: #fdd223;
+  padding: 6px 22px;
+  font-weight: 700;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+}
+.button::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  height: 100%;
+  width: 100%;
+  border: 2px solid #162c5a;
+  border-radius: 20px;
+}
+.button::after {
+  content: '';
+  border-top: 2px solid #fff;
+  width: 7px;
+  height: 0px;
+  position: absolute;
+  top: -3px;
+  left: 13px;
 }
 
 /*波浪边框样式*/
-
-.waveBorder {
-	margin-top: 10px;
-    width: 500px; height: 200px;
-    background-color: #34D0D1;
-    position: relative;
+.wave-border {
+  background-color: #f1f1f1;
+  position: relative;
+  border-radius: 12px 12px 0 0;
 }
-.waveBorder:after {
-    content: '';
-    position: absolute;
-    height: 50px;
-    left:0 ; 
-    right: 0;
-    bottom: -10px;
-    background: radial-gradient(20px 15px ellipse at top, #34D0D1 10px, transparent 11px);
-    background-size: 20px 20px;
+
+.wave-border::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  margin-top: -12px;
+  background-image: radial-gradient(circle 24px at center , #f1f1f1 51%, transparent 0%);
+  background-size: 24px;
+  background-repeat: repeat-x;
+  z-index: -1;
+  box-shadow: #000 5px 5px 5px;
 }
