@@ -1,0 +1,138 @@
+<!-- 新闻组件 -->
+<template>
+   <div class="news">
+       <div class='newsModule titleModule'>
+            <div class="newsContent">
+                <div class="newsEvents">
+                    <span class="title">news & events</span>
+                    <div class="path">首页 <span>></span> 新闻事件</div>
+                </div>
+            </div>
+        </div>
+        <div class="newsModule ourModule">
+            <div class="newsContent">
+                <news-list :title="ourNews" :lists="list"></news-list>
+            </div>
+        </div>
+        <div class="newsModule hackerModule">
+            <div class="newsContent">
+                <news-list :title="hackerNews" :lists="list"></news-list>
+            </div>
+        </div>
+   </div>
+</template>
+
+<script>
+
+import NewsList from '@/components/NewsList'
+
+export default {
+   components: { "news-list":NewsList },
+    data() {
+       return {
+            list: [{
+                day: '18',
+                notDay: '2019.04',
+                listTitle: '我是标题-18',
+                listContent: '我不是标题，我是内容，嘿嘿嘿-18'
+            }, {
+                day: '19',
+                notDay: '2019.04',
+                listTitle: '我是标题-19',
+                listContent: '我不是标题，我是内容，嘿嘿嘿-19'
+            }],
+            hackerNews:{
+                titleEn: "HACKER NEWS",
+                titleCh: "黑客新闻"
+            },
+            ourNews:{
+                titleEn: "OUR NEWS",
+                titleCh: "工作室新闻"
+            }
+       };
+    },
+   methods: {
+       
+   },
+}
+
+</script>
+<style>
+
+*{
+    color: #162c5a;
+    font-size: 14px;
+    line-height: 1.5em;
+    list-style: none;
+}
+
+.news{
+    width: 100%;
+}
+
+/*
+    新闻页面基础模块样式：标题模块，ourNews模块，hacker模块
+*/
+.newsModule{
+    margin: 0 auto;
+    width: 1200px;
+    background-color: #fff;
+    padding-top: 50px;
+}
+
+/*
+    具体模块样式
+*/
+.titleModule{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.ourModule{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.hackerModule{
+    margin: 50px auto;
+    border-radius: 20px;
+}
+
+/*
+    模块内容样式
+*/
+.newsContent{
+    width: 1104px;
+    margin: 0 auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px; 
+}
+
+/*
+    标题模块内容具体样式
+*/
+.newsEvents{
+    width: 100%;
+    position: relative;
+    padding-bottom: 50px;
+    border-bottom: 1px dashed #9a9a9a;
+}
+
+.newsEvents .title{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.newsEvents .path{
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.newsEvents .path>span{
+    color: #9a9a9a;
+}
+
+</style>
