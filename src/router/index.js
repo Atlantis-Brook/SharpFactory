@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import News from '@/components/News'
 import NotFound from '@/views/NotFound'
+import Blogs from '@/views/Blogs'
 
 Vue.use(Router)
 
@@ -14,7 +15,7 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/news',
+      path: '/new',
       name: 'News',
       component: News
     },
@@ -22,6 +23,11 @@ export default new Router({
       path: '*',
       name: 'NotFound',
       component: NotFound
+    },
+    {
+      path:'/blogs',
+      name:'Blogs',
+      component:Blogs
     }
   ]
 })

@@ -23,6 +23,16 @@ p {
   margin: 0;
   margin-bottom: 30px;
 }
+li {
+  list-style: none;
+}
+input, button {
+  outline: none;
+  border: none;
+}
+:placeholder {
+  color: #9a9a9a;
+}
 hr {
   display: block;
   height: 1px;
@@ -43,6 +53,10 @@ hr {
 }
 .container {
   width: 1104px;
+}
+.module {
+  border-radius: 12px;
+  margin-bottom: 50px !important;
 }
 
 /* 标题 */
