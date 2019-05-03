@@ -57,7 +57,7 @@ export default {
 }
 
 </script>
-<style>
+<style scoped>
 
 *{
     color: #162c5a;
@@ -77,7 +77,6 @@ export default {
     margin: 0 auto;
     width: 1200px;
     background-color: #fff;
-    padding-top: 50px;
 }
 
 /*
@@ -113,12 +112,15 @@ export default {
 */
 .newsEvents{
     width: 100%;
+    height: 36px;
     position: relative;
-    padding-bottom: 50px;
+    padding: 50px 0;
     border-bottom: 1px dashed #9a9a9a;
 }
 
 .newsEvents .title{
+    position: absolute;
+    left: 0;
     display: inline-block;
     font-size: 20px;
     font-weight: 700;
@@ -128,6 +130,7 @@ export default {
     position: absolute;
     right: 0;
     display: inline-block;
+    font-size: 18px;
     font-weight: 700;
 }
 
