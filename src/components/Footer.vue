@@ -1,14 +1,14 @@
 <template>
     <div>
-    <div class="footer-bgcolor">
-        <div class="footer-left_container" >
-            <p class="font-cu">CONTACT &nbsp;&nbsp;US </p>
+    <div class="footer_bgcolor">
+        <div class="footer_left-container" >
+            <p class="font-cu">CONTACT &nbsp;US </p>
             <p class="font-lm">留言板 </p>
             <dl>
                 <dd><input class="input-call" type="text" name="" placeholder="称呼"></dd>
                 <dd><input class="input-email" type="text" name="" placeholder="邮箱"></dd>
-                <dd><input class="input-leave_comments" type="text" name="" placeholder="留言"></dd>
-                <dd><input class="input-checkbox" type="checkbox">我已阅读并同意<a href="#"> 《隐私政策》 </a></dd>
+                <dd><textarea name="" class="input-leave_comments" placeholder="留言"></textarea></dd>
+                <dd><input class="input-checkbox" type="checkbox">我已阅读并同意<a href="#">《隐私政策》</a></dd>
                 <dd><input class="button-2" type="submit" value="SEND MESSAGE" ></dd>
             </dl>
         </div>
@@ -16,7 +16,7 @@
         <div>
             <p class="font-rp-1">期待您的留言</p>
             <p class="font-rp-2">我们会尽快地答复</p>
-            <div class="footer-right_container">
+            <div class="footer_right-container">
                 <img class="img-ct" src="../assets/contact.svg">
                 <p class="line">------------------------</p> 
                 <img class="img-em" src="../assets/email.svg"> 
@@ -27,8 +27,8 @@
             </div> 
         </div>
     </div>
-    <div class="bottom-bgcolor">
-        <div class="bottom-container">
+    <div class="bottom_bgcolor">
+        <div class="bottom_container">
             <p class="font-cr-1">Copyright ©2019SharpFactory All rights reserved.</p>
             <p class="font-cr-2"> 京 ICP 备10217899 号</p> 
         </div>   
@@ -49,16 +49,22 @@
  }
  </script>
  <style>
- 
- .footer-bgcolor{
+ *{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style-type: none;
+}
+ .footer_bgcolor{
      background-color:rgb(52, 208, 209);
      height: 700px;;
  }
- .bottom-bgcolor{
+ .bottom_bgcolor{
      background-color: #162c5A;
      height:120px;
  }
- .footer-left_container{
+ .footer_left-container{
     float: left;
      width: 600px;
  }
@@ -66,13 +72,15 @@
      padding-top: 100px;
      padding-left: 60px;
      font-size: 24px;
+      color: #162c5A;
  }
  .font-lm{
      padding-top: 26px;
      padding-left: 60px;
      font-size: 20px;
+      color: #162c5A;
  }
- input::-webkit-input-placeholder {
+::placeholder {
        color: 9a9a9a;     
        padding:15px;
  }
@@ -99,6 +107,8 @@
      background-color: white;
      width: 500px;
      height: 150px;
+     padding: 15px;
+     resize: none;
  }
  .input-checkbox{
      background-color:rgb(52, 208, 209);
@@ -120,28 +130,35 @@
     padding-left:1250px;;
     padding-top: 110px;
     font-size: 18px;
+     color: #162c5A;
 
 }
 .font-rp-2{
     padding-left: 1215px;
+    padding-top: 10px;
     font-size: 18px;
+    color: #162c5A;
 
 }
 .img-ct{
     width: 105px;
     padding-left: 100px;
+    position: relative;
+    top: -58px; 
+    
 }
 .img-em{
     width: 26px;
     padding-left: 130px;
 }
-.footer-right_container{
+.footer_right-container{
     margin-left:900px;
     margin-top: 120px;
     width: 312px;
     height: 298px;
     background-color: white; 
     border-radius: 12px;
+    
 }
 .line{
     text-align: center;
@@ -150,6 +167,7 @@
 {
     font-size: 18px;
     text-align: center;
+    color: #162c5A;
 }
 .font-address{
     font-size: 14px;
@@ -167,7 +185,7 @@
     color: #9A9A9A;
     padding-left: 60px;
 }
-.bottom-container{
+.bottom_container{
     float: left;
      width: 400px;
  }
