@@ -1,203 +1,207 @@
 <template>
-    <div>
+<div>
     <div class="footer_bgcolor">
-        <div class="footer_left-container" >
-            <p class="font-cu">CONTACT &nbsp;US </p>
-            <p class="font-lm">留言板 </p>
-            <dl>
-                <dd><input class="input-call" type="text" name="" placeholder="称呼"></dd>
-                <dd><input class="input-email" type="text" name="" placeholder="邮箱"></dd>
-                <dd><textarea name="" class="input-leave_comments" placeholder="留言"></textarea></dd>
-                <dd><input class="input-checkbox" type="checkbox">我已阅读并同意<a href="#">《隐私政策》</a></dd>
-                <dd><input class="button-2" type="submit" value="SEND MESSAGE" ></dd>
-            </dl>
-        </div>
-           
-        <div>
-            <p class="font-rp-1">期待您的留言</p>
-            <p class="font-rp-2">我们会尽快地答复</p>
-            <div class="footer_right-container">
-                <img class="img-ct" src="../assets/contact.svg">
-                <p class="line">------------------------</p> 
-                <img class="img-em" src="../assets/email.svg"> 
-               <p class="font-em">info@example.com</p>  
-               <p class="line">------------------------</p> 
-               <p class="font-address">贵州省贵阳市花溪区</p> 
-               <p class="font-address">贵安新区数字经济产业园4号0610室</p> 
-            </div> 
+        <div class="container">
+            <div class="font_left">
+                <span class="font_left-1">CONTACT&nbsp;US</span>
+                <br>
+                <span class="font_left-2">留言板</span>
+            </div>
+            <div class="font_right">
+                <span>期待您的留言</span>
+                <br>
+                <span class="font_right-1">我们会尽快地答复</span>
+           </div>
+           <div class="clear"></div>
+           <div class="input_lm">
+                <input class="input_name" type="text" name="" placeholder="称呼">
+                <br>
+                <input class="input_email" type="text" name="" placeholder="邮箱">
+                <br>
+                <textarea name="" class="lmessage" placeholder="留言"></textarea>
+                <br>
+                <input class="" type="checkbox">我已阅读并同意<a href="#">《隐私政策》</a>
+                <br>
+                <div class="button send_message">SEND MESSAGE</div>
+           </div>  
+            <div class="address">
+                <img class="img_pe" src="../assets/contact.svg">
+                <center><hr></center>    
+                <img class="img_ea" src="../assets/email.svg"> 
+                <span class="email_size">info@example.com</span> 
+                <center><hr></center>
+                <div class="address_size">
+                    <span>贵州省贵阳市花溪区</span> 
+                    <br>    
+                    <span>贵安新区数字经济产业园4号0610室</span>
+                </div> 
+            </div>
         </div>
     </div>
     <div class="bottom_bgcolor">
-        <div class="bottom_container">
-            <p class="font-cr-1">Copyright ©2019SharpFactory All rights reserved.</p>
-            <p class="font-cr-2"> 京 ICP 备10217899 号</p> 
-        </div>   
-        <section>
-            <a href="#">版权声明 </a>
-            <a href="#">隐私政策</a>
-            <a href="#">站点地图</a>
-            <a href="#">小额打赏</a>
-            <a href="#">联系我们</a>
-        </section>  
-    </div>
-
+        <div class="container">
+            <div class="bottom_cy">
+                <span >Copyright ©2019SharpFactory All rights reserved.</span>
+                <br>
+                <span> 京 ICP 备10217899 号</span> 
+            </div>
+            <div class="bottom-nav">
+                <a href="#">版权声明</a>
+                <a href="#">隐私政策</a>
+                <a href="#">站点地图</a>
+                <a href="#">小额打赏</a>
+                <a href="#">联系我们</a>
+            </div> 
+        </div>    
+    </div>       
 </div>
 </template>
+
  <script>
  export default {
      
  }
  </script>
- <style>
- *{
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
-    text-decoration: none;
-    list-style-type: none;
-}
- .footer_bgcolor{
-     background-color:rgb(52, 208, 209);
-     height: 700px;;
+
+ 
+ <style scoped>
+ .footer_bgcolor {
+    background-color:rgb(52, 208, 209);
+    height: 700px;;
  }
- .bottom_bgcolor{
-     background-color: #162c5A;
-     height:120px;
+ .clear{
+    clear: both;
  }
- .footer_left-container{
+.font_left{
+    padding-top: 100px;
     float: left;
-     width: 600px;
- }
- .font-cu{
-     padding-top: 100px;
-     padding-left: 60px;
-     font-size: 24px;
-      color: #162c5A;
- }
- .font-lm{
-     padding-top: 26px;
-     padding-left: 60px;
-     font-size: 20px;
-      color: #162c5A;
- }
-::placeholder {
-       color: 9a9a9a;     
-       padding:15px;
- }
- .input-call{
-     margin-top: 65px;
-     margin-left: 60px;
-     border-radius:12px;
-     background-color: white;
-     width: 200px;
-     height: 30px;
- }
- .input-email{
-     margin-top: 24px;
-     margin-left: 60px;
-     border-radius:12px;
-     background-color: white;
-     width: 300px;
-     height: 30px;
- }
- .input-leave_comments{
-     margin-top: 24px;
-     margin-left: 60px;
-     border-radius:12px;
-     background-color: white;
-     width: 500px;
-     height: 150px;
-     padding: 15px;
-     resize: none;
- }
- .input-checkbox{
-     background-color:rgb(52, 208, 209);
-     color: white;
-     border-width: 10px;
-     margin-left: 60px;
-     margin-top:24px; 
- }
- .button-2{
-    width: 150px;
-    height: 30px;
-    background: yellow;
-    border-radius: 12px;
-    font-size: 14px;
-    margin-top: 46px;
-    margin-left: 300px;
 }
-.font-rp-1{
-    padding-left:1250px;;
+.font_right{
+    float: right;
     padding-top: 110px;
+}
+.font_left-1{
+    font-size: 24px;
+}
+.font_left-2{
+   display: block;
+   padding-top: 26px;
+   font-size: 20px;
+}
+.font_right span{
     font-size: 18px;
-     color: #162c5A;
-
 }
-.font-rp-2{
-    padding-left: 1215px;
-    padding-top: 10px;
-    font-size: 18px;
-    color: #162c5A;
-
+.font_right-1{
+    display: block;
+    padding-top: 5px;
 }
-.img-ct{
-    width: 105px;
-    padding-left: 100px;
-    position: relative;
-    top: -58px; 
-    
+.input_lm{
+    width: 500px;
+    padding-top: 65px;
 }
-.img-em{
-    width: 26px;
-    padding-left: 130px;
+.input_lm input{
+    border-radius: 12px;
+    margin-bottom: 24px; 
+    border: 0px;  
+    outline: none;
+    padding-left: 15px;
 }
-.footer_right-container{
-    margin-left:900px;
-    margin-top: 120px;
+.input_name{
+    width: 200px;
+    height: 30px;
+}
+.input_email{
+    width: 300px;
+    height: 30px;
+}
+.lmessage{
+    border-radius: 12px;
+    padding: 15px;
+    outline: none;
+    resize:none; 
+    width:450px;
+    height:100px; 
+    margin-bottom: 24px;
+}
+.send_message{
+    margin-top: 46px;
+    margin-left: 200px;
+}
+.address{
     width: 312px;
     height: 298px;
-    background-color: white; 
-    border-radius: 12px;
-    
+    background: #fff;
+    position: absolute;
+    left: 900px;
+    top: 260px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px; 
 }
-.line{
+.address::after{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    margin-top: -12px;
+    background-image: radial-gradient(circle 24px at center , #fff 51%, transparent 0%);
+    background-size: 24px;
+    background-repeat: repeat-x;
+    background-image: radial-gradient(circle 24px at center , #fff 51%, transparent 0%);
+    box-shadow:none;
+}
+hr{
+    width: 200px;
+}
+.img_pe{
+    width: 105px;
+    margin-top: -52px;
+    margin-left: 90px;
+}
+.img_ea{
+    width: 26px;
+    margin-left: 130px;
+    color: #9a9a9a;
+}
+.address span{
+    display: block;
+    line-height: 5px;
     text-align: center;
 }
-.font-em
-{
+.email_size{
     font-size: 18px;
-    text-align: center;
-    color: #162c5A;
+    padding-top: 20px;
+    padding-bottom: 15px;
 }
-.font-address{
+.address_size{
+    padding-top: 25px;
     font-size: 14px;
-    color: #9A9A9A;
-    text-align: center;
+    color: #9a9a9a;
 }
-.font-cr-1{
-    font-size: 14px;
-    color: #9A9A9A;
-    padding-top: 46px;
-    padding-left: 60px;
-}
-.font-cr-2{
-    font-size: 14px;
-    color: #9A9A9A;
-    padding-left: 60px;
-}
-.bottom_container{
+.bottom_bgcolor{
+    background-color: #162c5A;
+    height:120px;
+ }
+.bottom_cy{
+    color: #9a9a9a;
+    margin: 40px 0px;
+    width: 320px;
     float: left;
-     width: 400px;
  }
- section{
-     padding-top: 50px;
-     padding-left: 200px;
- }
- section>a{
-     font-size: 14px;
-     color: #fff;
-     padding-left: 80px;
- }
+.bottom-nav{
+    width: 676px;
+    color: #fff;
+    padding-top: 50px;
+    padding-left: 100px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+}
+.bottom-nav a{
+    color: #fff;
+    width: 130px;
+} 
  </style>
  
  

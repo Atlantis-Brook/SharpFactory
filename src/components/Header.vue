@@ -1,7 +1,7 @@
 <template>
-    <div class="background">
-        <container class="container">
-            <img src="../assets/logo.png" class="logo" alt="">
+    <div class="header_background">
+        <div class="wrapper">
+            <span><img src="../assets/logo.png" class="logo" alt="">    </span>
             <nav>
                 <ul>
                     <li><a href="#">首页</a></li>
@@ -12,8 +12,8 @@
                     <li><a href="#">网址导航</a></li>
                 </ul>
             </nav>
-            <input type="button" value="登录" class="log_in-button">
-        </container>
+            <input type="button" value="登录" class="button  log_in-button"> 
+        </div>
     </div>
 </template>
 
@@ -23,15 +23,8 @@ export default {
 }
 </script>
 
-<style>
-*{
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
-    text-decoration: none;
-    list-style-type: none;
-}
-.background{
+<style scoped>
+.header_background{
     width: 100%;
     height: 650px;
     background: url(../assets/hacking.jpg) no-repeat;
@@ -39,32 +32,32 @@ export default {
 }
 .logo{
     height: 50px;
+    padding-top: 36px;  
     float: left;
-    padding-left: 120px; 
-    padding-top: 36px;
-    
 }
-.container{
-    width: 1200px;
+nav{
+    width: 800px;
+    padding-left:50px;
+    padding-top: 45px;
+    float: left;
 }
 ul{
-    padding-top: 50px;
-    padding-left:400px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: flex-start;
 }
 li{
-    float: left;
-    padding-left: 70px;
+    width: 120px;
+    list-style-type: none;
 }
 li>a{
     font-size: 18px;
     color: #fff;
+    text-align: center;
 }
-.log_in-button{
-    width: 60px;
-    height: 30px;
-    background: yellow;
-    border-radius: 12px;
-    font-size: 14px;
-    margin-left: 200px;
+.log_in-button { 
+    margin: 55px 0px 0px 60px;
+    float: left;
+    border: 0;
 }
 </style>
