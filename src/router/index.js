@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import News from '@/components/News'
 import NotFound from '@/views/NotFound'
 import Blogs from '@/views/Blogs'
+import BlogDetails from '@/views/BlogDetails'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path:'/blogs',
       name:'Blogs',
       component:Blogs
+    },
+    {
+      path:'/blogs/details',
+      name:'BlogDetails',
+      component:BlogDetails
     }
   ]
 })
