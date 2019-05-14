@@ -14,14 +14,10 @@
            </div>
            <div class="clear"></div>
            <div class="input_lm">
-                <input class="input_name" type="text" name="" placeholder="称呼">
-                <br>
+                <input class="input_name" type="text" name="" placeholder="称呼"> 
                 <input class="input_email" type="text" name="" placeholder="邮箱">
-                <br>
                 <textarea name="" class="lmessage" placeholder="留言"></textarea>
-                <br>
                 <input class="" type="checkbox">我已阅读并同意<a href="#">《隐私政策》</a>
-                <br>
                 <div class="button send_message">SEND MESSAGE</div>
            </div>  
             <div class="address">
