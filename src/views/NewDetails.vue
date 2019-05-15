@@ -2,21 +2,21 @@
     <div class="warpper moudle">
         <div class="details module">
             <div class="head">
-                <div class="title">our blogs</div>
-                <div class="path">首页 <span>></span> 博客聚合 <span>></span> 博客详情</div>
+                <div class="title">news&event</div>
+                <div class="path">首页 <span>></span> 新闻事件 <span>></span> 新闻详情</div>
             </div>
             <hr class="hr">
-            <div class="blog-title-moudle">
-                <div class="blog-title">
+            <div class="new-title-moudle">
+                <div class="new-title">
                     {{blogDetails.title}}
                 </div>
-                <div class="blog-time">
+                <div class="new-time">
                      {{blogDetails.time}}
                 </div>                  
             </div>
             <div class="line">
             </div>
-            <div class="blog-details-moudle" v-html = 'blogDetails.details' >
+            <div class="new-details-moudle" v-html = 'blogDetails.details' >
                 
             </div>
             <hr class="hr">
@@ -33,7 +33,6 @@
 export default {
     data () {
         return {
-            word:'sjdhbnsjahbj',
             blogDetails:{
                 title:'标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题',
                 time:'2019.5.12',
@@ -74,19 +73,19 @@ export default {
     margin: 0;
 }
 /* 博客详细内容 */
- .blog-title-moudle{ 
+ .new-title-moudle{ 
     padding-top: 100px;
     display: flex;
     justify-content:space-between; 
 }
-.blog-title{
+.new-title{
     text-align: left;
     font-size: 24px;
     font-weight: 700;
     width: 480px;
     text-overflow: ellipsis;
 }
-.blog-time{
+.new-time{
     font-size: 16;
     color: #9a9a9a;
     text-align: right;
@@ -100,13 +99,12 @@ export default {
     border-top: 6px solid #ffd223;
     text-align: left;
 }
-.blog-details-moudle{
-    text-indent:2em;
+.new-details-moudle{
     text-align: left;
     padding-bottom: 100px;
     text-overflow: ellipsis;
 }
-.blog-details-moudle>p{
+.new-details-moudle>p{
     margin-bottom: 28px;
 }
 /* 页面改变 */
