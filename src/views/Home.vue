@@ -43,7 +43,7 @@
               <p>2019年4月</p>
             </div>
             <div class="right">
-
+              <div class="change-pages-right">></div>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
               <p>2019年4月</p>
             </div>
             <div class="right">
-
+              <div class="change-pages-right">></div>
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@
               <p>2019年4月</p>
             </div>
             <div class="right">
-
+              <div class="change-pages-right">></div>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
         <div class="title">
           <div class="left">
             <h1 class="fsz-24">OUR SERVICES</h1>
-            <h2 class="fsz-20">项目展示</h2>
+            <h2 class="fsz-20">为您服务</h2>
           </div>
           <div class="right">
             <p class="fsz-18">提供高质量 高效率<br>高性价比的服务</p>
@@ -115,7 +115,7 @@
         <img src="../assets/images/mobile-devices-2017978.svg" alt="">
         <div class="wave-border">
           <div class="left">
-            <div class="change-page"></div>
+            <div class="change-pages-left"><</div>
           </div>
           <div class="middle">
             <h2 class="fsz-20">创意网站建设</h2>
@@ -123,7 +123,7 @@
             <p>针对企业言网、品牌网站全案、电子商务网站、行业门户网菇等，提供完美解决方案。UI设计、前端编写、后端实现、服<br>务器部署上线以及网站后期维护全权负责。给您高质量、高效率、高性价比的服务。</p>
           </div>
           <div class="right">
-            <div class="change-page"></div>
+            <div class="change-pages-right">></div>
           </div>
         </div>
         <div class="button">LEARN MORE</div>
@@ -254,12 +254,14 @@
     width: 1200px;
     height: 120px;
     margin: 0 auto;
+    position: relative;
+    top: -50px;
   }
   .middle1 .wave-border::after {
     background-image: radial-gradient(circle 24px at center , #fff 51%, transparent 0%);
   }
   .about-us {
-    margin:112px auto 0;
+    margin: 62px auto 0;
     width: 1104px;
     display: flex;
   }
@@ -346,6 +348,20 @@
     display: flex;
     justify-content: space-between;
   }
+  .project .change-pages-right{
+    background-color: #fff;
+    color: #34d0d1;
+    margin-top: 45px;
+    padding-top: 8px;
+    padding-right: 1px;
+    font-size: 22px;
+    width: 35px;
+    height: 35px;
+  }
+  .project .change-pages-right:hover{
+    position: relative;
+    left: 1px;
+  }
   .project1 {
     width: 288px;
     height: 320px;
@@ -369,7 +385,7 @@
   .project1 .wave-border .left {
     text-align: left;
     margin: 33px 0 0 38px;
-    flex: 5;
+    flex: 3;
   }
   .project1 .wave-border .left p {
     line-height: 2em;
@@ -400,7 +416,7 @@
   .project2 .wave-border .left {
     text-align: left;
     margin: 33px 0 0 38px;
-    flex: 5;
+    flex: 3;
   }
   .project2 .wave-border .left p {
     line-height: 2em;
@@ -431,7 +447,7 @@
   .project3 .wave-border .left {
     text-align: left;
     margin: 33px 0 0 38px;
-    flex: 5;
+    flex: 3;
   }
   .project3 .wave-border .left p {
     line-height: 2em;
@@ -441,7 +457,7 @@
   }
   .middle2 .button {
     padding: 8px 23px;
-    margin-bottom: 100px;
+    margin: 30px auto 110px;
     transition: background-color 0.9s;
   }
   .middle2 .button::after {
@@ -463,7 +479,7 @@
   .middle3 .top .img {
     width: 100%;
     height: 400px;
-    background-color: rgba(52, 208, 209, 0.4);
+    background-color: rgba(52, 208, 209, 0.5);
     position: absolute;
     top: 0;
     left: 0;
@@ -515,6 +531,7 @@
   }
   .middle3 .bottom {
     background-color: #fdd223;
+    position: relative;
   }
   .middle3 .title {
     padding: 100px 0 0 0;
@@ -523,8 +540,11 @@
     display: flex;
   }
   .middle3 img {
-    height: 178px;
-    width: 750px;
+    width: 900px;
+    margin: 68px -414px;
+    position: absolute;
+    top: 3px;
+    z-index: 5;
   }
   .middle3 h2 {
     margin-bottom: 40px;
@@ -540,13 +560,14 @@
     left: 16px;
   }
   .middle3 .button:hover {
-    background-color: #fdd223;
+    position: relative;
+    top: 1px;
   }
   .middle3 .wave-border {
     width: 1104px;
     background-color: #fff;
-    padding-top: 60px;
-    margin: 0 auto;
+    padding-top: 88px;
+    margin: 200px auto 0;
     display: flex;
   }
   .middle3 .wave-border::after {
@@ -555,20 +576,32 @@
   .middle3 hr {
     margin: 0 0 40px;
   }
-  .middle3 p {
-    margin-bottom: 60px;
+  .middle3 .wave-border p {
+    margin-bottom: 48px;
+    text-align: left;
   }
-  .middle3 .left {
+  .middle3 .wave-border .left {
     flex: 4;
   }
-  .middle3 .middle {
+  .middle3 .wave-border .middle {
     flex: 17;
   }
-  .middle3 .right {
+  .middle3 .wave-border .right {
     flex: 4;
   }
-  .middle4 {
-    
+  .middle3 .change-pages-left{
+    margin: 43px 20px;
+  }
+  .middle3 .change-pages-left:hover{
+    position: relative;
+    left: -1px;
+  }
+  .middle3 .change-pages-right{
+    margin: 43px 20px;
+  }
+  .middle3 .change-pages-right:hover{
+    position: relative;
+    left: 1px;
   }
   .middle4 .title {
     padding: 100px 0 0 0;

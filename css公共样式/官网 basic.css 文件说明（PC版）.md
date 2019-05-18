@@ -32,17 +32,17 @@
 
 + `.button`：按钮
 + `.wave-border`：波浪边框div
-+ `h1.title`：24px
-+ `h2.title`：20px
-+ `h3.title` ：18px
-
-
++ `.fsz-24`：24px
++ `.fsz-20`：20px
++ `.fsz-18` ：18px
+  `.cut-line`：短分割线 
+  `.change-pages-left`：左换页图标
+  `.change-pages-right`：右换页图标
 
 ##  TODO
 
 1. nav 的  a 链接下的波浪线
 2. 竖直分割线
-3. 小分割线
-4. arrow(用字体图标做)
-5. 分页器
+3. arrow(用字体图标做)(暂用<代替)
+
 
