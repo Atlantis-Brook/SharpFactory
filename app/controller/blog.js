@@ -8,7 +8,7 @@ class BlogController extends Controller {
     async detail() {
         const ctx = this.ctx;
         const blogId = ctx.params.id;
-        const blog = await ctx.model.blog.find({
+        let blog = await ctx.model.blog.find({
             where: {
                 'id': blogId
             }
@@ -32,6 +32,11 @@ class BlogController extends Controller {
             }, {
                 where: {
                     id: blog.id
+                }
+            });
+            blog = await ctx.model.blog.find({
+                where: {
+                    'id': blogId
                 }
             });
         }
