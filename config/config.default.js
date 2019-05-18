@@ -16,16 +16,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1554459182467_3877';
 
   // add your middleware config here
-  config.middleware = ['login', 'noFound'];
-
-   // 添加 view 配置
-   config.view = {
-    defaultViewEngine: 'nunjucks',
-    mapping: {
-      '.html': 'nunjucks',
-    },
-    cache: false
-  };
+  config.middleware = ['login'];
 
   //允许请求
   config.cors = {
