@@ -23,21 +23,7 @@ module.exports = appInfo => {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
     credentials: true,
   };
-<<<<<<< HEAD
-
-  // 网络安全
-  config.security = {
-    csrf: {
-      enable: false,
-    },
-    domainWhiteList: ['*'],
-  };
-  return config;
-
-};
-=======
   
 
   return config;
 };
->>>>>>> feature-console
