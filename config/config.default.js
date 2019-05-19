@@ -10,28 +10,20 @@ module.exports = appInfo => {
    * built-in config
    * @type {Egg.EggAppConfig}
    **/
-  const config = {};
+  const config = exports = {};
 
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1554459182467_3877';
+  config.keys = appInfo.name + '_1558249396593_7398';
 
   // add your middleware config here
-  config.middleware = ['login', 'noFound'];
-
-   // 添加 view 配置
-   config.view = {
-    defaultViewEngine: 'nunjucks',
-    mapping: {
-      '.html': 'nunjucks',
-    },
-    cache: false
-  };
-
-  //允许请求
+  config.middleware = ['login'];
+  
+  //请求类型
   config.cors = {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
     credentials: true,
   };
+<<<<<<< HEAD
 
   // 网络安全
   config.security = {
@@ -43,3 +35,9 @@ module.exports = appInfo => {
   return config;
 
 };
+=======
+  
+
+  return config;
+};
+>>>>>>> feature-console

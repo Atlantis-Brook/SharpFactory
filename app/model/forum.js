@@ -3,20 +3,20 @@
 module.exports = app => {
     const {
         INTEGER,
-        VARCHAR,
-        TIME
+        STRING,
+        DATE
     } = app.Sequelize;
-    const forum = app.model.define('forum', {
+    const Forum = app.model.define('forum', {
         id: {
             type: INTEGER,
-            primaryKey: ture
+            primaryKey: true
         },
-        user: VARCHAR,
-        message: VARCHAR,
+        user: STRING,
+        message: STRING,
         ip: INTEGER,
-        address: VARCHAR,
-        created_at: TIME
+        address: STRING,
+        created_at: DATE
     });
-    return forum;
+    return Forum;
 
 }

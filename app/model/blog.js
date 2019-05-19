@@ -4,23 +4,32 @@ module.exports = app => {
     const {
         INTEGER,
         TEXT,
-        TIME,
-        VARCHAR
+        DATE,
+        STRING
     } = app.Sequelize;
-    const blog = app.model.define('blog', {
+    const Blog = app.model.define('blog', {
         id: {
             type: INTEGER,
-            primaryKey: ture
+            primaryKey: true
         },
         user_id: INTEGER,
-        title: VARCHAR,
+        title: STRING,
         visits: INTEGER,
         markdown: TEXT,
         synopsis: TEXT,
         html: TEXT,
+<<<<<<< HEAD
         update_html: TIME,
         created_at: TIME,
         updated_all: TIME
     });
     return blog;
 }
+=======
+        update_html: DATE,
+        created_at: DATE,
+        updated_all: DATE
+    });
+    return Blog;
+};
+>>>>>>> feature-console
