@@ -5,7 +5,6 @@ html {
   font-size: 14px;
   color: #162c5a;
   line-height: 1.5em;
-  text-align: center;
   background-color: #f1f1f1;
 }
 body {
@@ -51,9 +50,11 @@ hr {
 .wrapper {
   width: 1200px;
   min-height: 100vh;
+  margin: 0 auto;
 }
 .container {
   width: 1104px;
+  margin: 0 auto;
 }
 .module {
   border-radius: 12px;
@@ -140,6 +141,7 @@ nav a:hover {
   cursor: pointer;
   transition: background-color 0.7s;
   position: relative;
+  outline: none;
 }
 .button::before {
   content: '';
