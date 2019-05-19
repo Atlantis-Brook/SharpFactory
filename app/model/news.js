@@ -3,16 +3,16 @@
 module.exports = app => {
     const {
         INTEGER,
-        VARCHAR
-    } = app.Sequlize;
-    const news = app.moel.define('news', {
+        STRING
+    } = app.Sequelize;
+    const News = app.model.define('news', {
         id: {
             type: INTEGER,
-            primayKey: ture
+            primaryKey: true
         },
-        title: VARCHAR,
-        synopsis: VARCHAR,
-        news_url: VARCHAR
+        title: STRING,
+        synopsis: STRING,
+        news_url: STRING
     });
-    return news;
+    return News;
 }

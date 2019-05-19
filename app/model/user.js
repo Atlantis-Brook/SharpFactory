@@ -3,16 +3,16 @@
 module.exports = app => {
     const {
         INTEGER,
-        VARCHAR
-    } = app.Sequlize;
-    const user = app.model.define('user', {
+        STRING
+    } = app.Sequelize;
+    const User = app.model.define('user', {
         id: {
             type: INTEGER,
-            primaryKey: ture
+            primaryKey: true
         },
         user_id: INTEGER,
-        user: VARCHAR,
-        avatar: VARCHAR
+        user: STRING,
+        avatar: STRING
     });
-    return user;
+    return User;
 }

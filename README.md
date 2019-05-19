@@ -1,6 +1,6 @@
 # feature-console
 
-a egg.js project
+
 
 ## QuickStart
 
@@ -31,5 +31,3 @@ $ npm stop
 
 
 [egg]: https://eggjs.org
-
-cookie keys:1554459182467_3877

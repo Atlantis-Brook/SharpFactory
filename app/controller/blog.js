@@ -1,6 +1,9 @@
 'use strict';
 
 const Controller = require('egg').Controller;
+const sd = require('silly-datetime');
+const marked = require('marked');
+const moment = require('moment');
 
 class BlogController extends Controller {
 
@@ -8,12 +11,12 @@ class BlogController extends Controller {
     async detail() {
         const ctx = this.ctx;
         const blogId = ctx.params.id;
-        let blog = await ctx.model.blog.find({
+        let blog = await ctx.model.Blog.findAll({
             where: {
                 'id': blogId
             }
         });
-        await ctx.model.blog.update({
+        await ctx.model.Blog.update({
             'visits': blog.visits + 1
         }, {
             where: {
@@ -25,7 +28,7 @@ class BlogController extends Controller {
             let update_html = sd.format(new Date(), 'YYYY-MM-DD HH:mm:ss');
             let rule = new RegExp("<.+?>", "g");
             let synopsis = html.replace(rule, '');
-            await ctx.model.blog.update({
+            await ctx.model.Blog.update({
                 'html': html,
                 'update_html': update_html,
                 'synopsis': synopsis
@@ -34,12 +37,13 @@ class BlogController extends Controller {
                     id: blog.id
                 }
             });
-            blog = await ctx.model.blog.find({
+            blog = await ctx.model.Blog.find({
                 where: {
                     'id': blogId
                 }
             });
         }
+        ctx.body = blog;
         return blog;
     }
 
@@ -56,6 +60,8 @@ class BlogController extends Controller {
             offset: (currentPage - 1) * pageSize,
             limit: pageSize
         });
+        ctx.body = blog;
+        ctx.body = count;
         return {
             count,
             blog

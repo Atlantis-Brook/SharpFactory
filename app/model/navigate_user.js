@@ -3,20 +3,20 @@
 module.exports = app => {
     const {
         INTEGER,
-        VARCHAR
-    } = app.Sequlize;
-    const navigateUser = app.model.define('navigate_user', {
+        STRING
+    } = app.Sequelize;
+    const NavigateUser = app.model.define('navigate_user', {
         id: {
             type: INTEGER,
-            primaryKey: ture
+            primaryKey: true
         },
         user_id: INTEGER,
         category_id: INTEGER,
-        category: VARCHAR,
-        site_name: VARCHAR,
-        site_url: VARCHAR,
-        site_icon: VARCHAR
+        category: STRING,
+        site_name: STRING,
+        site_url: STRING,
+        site_icon: STRING
 
     });
-    return navigateUser;
+    return NavigateUser;
 }

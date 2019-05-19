@@ -3,23 +3,23 @@
 module.exports = app => {
     const {
         INTEGER,
-        TIME,
-        VARCHAR,
+        DATE,
+        STRING,
         TEXT
-    } = app.Sequlize;
-    const undertakeProject = app.model.define('undertake_project', {
+    } = app.Sequelize;
+    const UndertakeProject = app.model.define('undertake_project', {
         id: {
             type: INTEGER,
-            primaryKey: ture
+            primaryKey: true
         },
-        user: VARCHAR,
+        user: STRING,
         phone: INTEGER,
-        email: VARCHAR,
-        address: VARCHAR,
+        email: STRING,
+        address: STRING,
         content: TEXT,
-        readme: VARCHAR,
+        readme: STRING,
         file: TEXT,
-        created_at: TIME
+        created_at: DATE
     });
-    return undertakeProject;
+    return UndertakeProject;
 }
