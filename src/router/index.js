@@ -1,12 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-<<<<<<< HEAD
 import Home from '@/views/Home'
-=======
 import HelloWorld from '@/components/HelloWorld'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
->>>>>>> view-tianchangqing
 import News from '@/components/News'
 import NotFound from '@/views/NotFound'
 import Blogs from '@/views/Blogs'
@@ -23,9 +20,7 @@ export default new Router({
       component: Home
     },
     {
-<<<<<<< HEAD
       path: '/new',
-=======
       path: '/h',
       name: 'Header',
       component: Header
@@ -37,7 +32,6 @@ export default new Router({
     },
     {
       path: '/news',
->>>>>>> view-tianchangqing
       name: 'News',
       component: News
     },
