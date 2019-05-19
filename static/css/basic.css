@@ -23,7 +23,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 p {
   margin: 0;
-  margin-bottom: 30px;
 }
 hr {
   display: block;
@@ -48,13 +47,13 @@ hr {
 }
 
 /* 标题 */
-h1.title {
+.fsz-24 {
   font-size: 24px;
 }
-h2.title {
+.fsz-20 {
   font-size: 20px;
 }
-h3.title {
+.fsz-18 {
   font-size: 18px;
 }
 
@@ -62,14 +61,13 @@ h3.title {
 nav a {
   color: #fff;
 }
-
 nav a:hover {
   /* TODO */
   /* border-bottom:  */
 }
 
 /* 分割线 */
-hr.vertical {
+.vertical {
   /* TODO */
   display: block;
   height: 1px;
@@ -82,11 +80,41 @@ hr.vertical {
   transform: rotate(90deg);
 }
 .cut-line {
-  /* TODO */
   height: 6px;
   width: 46px;
   background-color: #fdd223;
+  border-radius: 50px;
+  display: inline-block;
 }
+
+/*换页*/
+.change-pages-left{
+  display: inline-block;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-right: 2px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
+  background-color: #34d0d1;
+  border-radius: 50%;
+}
+.change-pages-right {
+  display: inline-block;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-left: 2px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
+  background-color: #34d0d1;
+  border-radius: 50%;
+}
+
 
 /*按钮样式*/
 .button {
@@ -96,6 +124,7 @@ hr.vertical {
   font-weight: 700;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.7s;
   position: relative;
 }
 .button::before {
@@ -112,10 +141,12 @@ hr.vertical {
   content: '';
   border-top: 2px solid #fff;
   width: 7px;
-  height: 0px;
   position: absolute;
   top: -3px;
   left: 13px;
+}
+.button:hover {
+  background-color: #34d0d1;
 }
 
 /*波浪边框样式*/
@@ -136,5 +167,5 @@ hr.vertical {
   background-image: radial-gradient(circle 24px at center , #f1f1f1 51%, transparent 0%);
   background-size: 24px;
   background-repeat: repeat-x;
-  box-shadow: #000 5px 5px 5px;
+  /*box-shadow: #000 5px 5px 5px;*/
 }
