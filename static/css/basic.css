@@ -24,6 +24,16 @@ h1,h2,h3,h4,h5,h6 {
 p {
   margin: 0;
 }
+li {
+  list-style: none;
+}
+input, button {
+  outline: none;
+  border: none;
+}
+:placeholder {
+  color: #9a9a9a;
+}
 hr {
   display: block;
   height: 1px;
@@ -44,6 +54,10 @@ hr {
 }
 .container {
   width: 1104px;
+}
+.module {
+  border-radius: 12px;
+  margin-bottom: 50px !important;
 }
 
 /* 标题 */
