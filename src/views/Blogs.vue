@@ -130,10 +130,8 @@ export default {
 }
 
 </script>
-<style>
 
-
-
+<style scoped>
 /*基础模块样式*/
 .our-blogs-module{
     margin: 0 auto;

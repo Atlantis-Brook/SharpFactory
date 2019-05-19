@@ -43,7 +43,8 @@ export default {
     
 }
 </script>
-<style>
+
+<style scoped>
 .details{
     margin: 0 auto;
     width: 1200px;

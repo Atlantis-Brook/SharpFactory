@@ -246,9 +246,15 @@
   </div>
 </template>
 <script>
+export default {
 
+}
 </script>
-<style>
+
+<style scoped>
+  .middle {
+    text-align: center;
+  }
   .middle1 .wave-border {
     background-color: #fff;
     width: 1200px;
@@ -601,7 +607,7 @@
   }
   .middle3 .change-pages-right:hover{
     position: relative;
-    left: 1px;
+    left: 5px;
   }
   .middle4 .title {
     padding: 100px 0 0 0;

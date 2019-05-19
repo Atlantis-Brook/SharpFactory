@@ -64,6 +64,7 @@
  .footer_bgcolor {
     background-color:rgb(52, 208, 209);
     height: 700px;
+    position: relative;
  }
  .clear{
     clear: both;

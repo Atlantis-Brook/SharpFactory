@@ -22,8 +22,8 @@ export default {
 
     }
 }
-
 </script>
+
 <style scoped>
 .notfound{
     width: 100vw;

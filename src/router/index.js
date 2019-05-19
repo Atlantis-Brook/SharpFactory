@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home'
-import HelloWorld from '@/components/HelloWorld'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import News from '@/components/News'
 import NotFound from '@/views/NotFound'
 import Blogs from '@/views/Blogs'
@@ -20,23 +17,22 @@ export default new Router({
       component: Home
     },
     {
-      path: '/new',
-      path: '/h',
-      name: 'Header',
-      component: Header
-    },
-    {
-      path: '/f',
-      name: 'Footer',
-      component: Footer
-    },
-    {
       path: '/news',
       name: 'News',
       component: News
     },
     {
-      path: '/blogdetails',
+      path:'/news/details',
+      name:'NewDetails',
+      component:NewDetails
+    },
+    {
+      path:'/blogs',
+      name:'Blogs',
+      component:Blogs
+    },
+    {
+      path: '/blogs/details',
       name: 'BlogDetails',
       component: BlogDetails
     },
@@ -45,15 +41,5 @@ export default new Router({
       name: 'NotFound',
       component: NotFound
     },
-    {
-      path:'/blogs',
-      name:'Blogs',
-      component:Blogs
-    },
-    {
-      path:'/new/details',
-      name:'NewDetails',
-      component:NewDetails
-    }
   ]
 })

@@ -6,6 +6,9 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import '@/assets/css/basic.css'
+import '@/assets/js/mobile_or_pc.js'
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
