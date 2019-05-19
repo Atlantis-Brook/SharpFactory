@@ -60,7 +60,11 @@ export default {
 }
 
 </script>
-<style>
+<style scoped>
+
+*{
+    list-style: none;
+}
 
 .list{
     padding-top: 100px;
@@ -68,10 +72,13 @@ export default {
 .listTitle{
     padding-bottom: 70px;
     position: relative;
+    height: 126px;
 }
 
 .listTitle .listTitleCon{
     display: inline-block;
+    position: absolute;
+    left: 0;
 }
 
 .listTitle .listTitleCon .listTitleEn{

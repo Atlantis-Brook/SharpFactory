@@ -5,6 +5,7 @@ import News from '@/components/News'
 import NotFound from '@/views/NotFound'
 import Blogs from '@/views/Blogs'
 import NewDetails from '@/views/NewDetails'
+import BlogDetails from '@/views/BlogDetails'
 
 Vue.use(Router)
 
@@ -19,6 +20,11 @@ export default new Router({
       path: '/new',
       name: 'News',
       component: News
+    },
+    {
+      path: '/blogdetails',
+      name: 'BlogDetails',
+      component: BlogDetails
     },
     {
       path: '*',
