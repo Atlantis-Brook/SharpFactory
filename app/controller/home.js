@@ -7,9 +7,9 @@ class HomeController extends Controller {
     const  ctx  = this.ctx;
     console.log(ctx.model);
     const blog = await ctx.model.Blog.findAll({
-        where: {
-            id: 1
-        }
+      order:[
+        ['id','DESC']
+      ]
     });
     ctx.body = blog;
   }

@@ -2,15 +2,15 @@
 const Controller = require('egg').Controller;
 class NewsController extends Controller {
     async list() {
-        ctx = this.ctx;
+        const ctx = this.ctx;
         const currentPage = ctx.query.count || 1;
         const pageSize = 15;
-        const {
-            count,
-            news
-        } = await ctx.model.news.findAndCount({
-            offset: (currentPage - 1) * pageSize,
-            limit: pageSize
+        const {count,rows} = await ctx.model.News.findAndCountAll({
+            order:[
+                ['id','DESC']
+            ],
+             offset: (currentPage - 1) * pageSize,
+             limit: pageSize
         });
         return {
             count,
