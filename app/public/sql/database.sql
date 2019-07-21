@@ -81,6 +81,7 @@ CREATE TABLE IF NOT EXISTS `news`(
   `title` VARCHAR(120) NOT NULL COMMENT '标题',
   `synopsis` VARCHAR(1024) NOT NULL COMMENT '新闻简介',
   `url` VARCHAR(120) NOT NULL COMMENT '新闻地址',
+  `time` VARCHAR(120) NOT NULL COMMENT '发布时间',
   PRIMARY KEY (`id`),
   KEY (`title`),
   KEY (`synopsis`)
