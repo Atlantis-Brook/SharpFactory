@@ -79,8 +79,8 @@ DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news`(
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `title` VARCHAR(120) NOT NULL COMMENT '标题',
-  `synopsis` VARCHAR(120) NOT NULL COMMENT '新闻简介',
-  `news_url` VARCHAR(120) NOT NULL COMMENT '新闻地址',
+  `synopsis` VARCHAR(1024) NOT NULL COMMENT '新闻简介',
+  `url` VARCHAR(120) NOT NULL COMMENT '新闻地址',
   PRIMARY KEY (`id`),
   KEY (`title`),
   KEY (`synopsis`)
