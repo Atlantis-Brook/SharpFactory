@@ -42,20 +42,12 @@
     "autod": "autod"
   },
   "ci": {
-<<<<<<< HEAD
-    "version": "8"
-=======
     "version": "10"
->>>>>>> feature-console
   },
   "repository": {
     "type": "git",
     "url": ""
   },
-<<<<<<< HEAD
   "author": "jakysing",
-=======
-  "author": "",
->>>>>>> feature-console
   "license": "MIT"
 }
