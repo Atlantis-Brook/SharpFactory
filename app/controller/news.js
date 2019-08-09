@@ -14,7 +14,7 @@ class NewsController extends Controller {
         });
         return {
             count,
-            news
+            rows
         };
 
     }

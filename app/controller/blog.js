@@ -6,8 +6,9 @@ const marked = require('marked');
 const moment = require('moment');
 
 class BlogController extends Controller {
-
-
+    /**
+     * blog详情页面数据查询和处理
+     */
     async detail() {
         const ctx = this.ctx;
         const blogId = ctx.params.id;
@@ -46,9 +47,9 @@ class BlogController extends Controller {
         ctx.body = blog;
         return blog;
     }
-
-
-
+/**
+ * blog列表界面数据查询和处理
+ */
     async blogList() {
         const ctx = this.ctx;
         const currentPage = ctx.query.count || 1;

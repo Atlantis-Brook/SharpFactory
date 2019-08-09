@@ -5,14 +5,14 @@ module.exports = app => {
         INTEGER,
         STRING
     } = app.Sequelize;
-    const News = app.model.define('news', {
+    const News = app.model.define('hot_news', {
         id: {
             type: INTEGER,
             primaryKey: true
         },
         title: STRING,
         synopsis: STRING,
-        news_url: STRING
+        url: STRING
     });
     return News;
 }

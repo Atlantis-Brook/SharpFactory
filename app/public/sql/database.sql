@@ -74,15 +74,27 @@ CREATE TABLE IF NOT EXISTS `navigate_index`(
   KEY (`category_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='网址导航默认信息数据表' AUTO_INCREMENT=1;
 
--- 导出 news 表
-DROP TABLE IF EXISTS `news`;
-CREATE TABLE IF NOT EXISTS `news`(
+-- 导出 hacker_news 表
+DROP TABLE IF EXISTS `hacker_news`;
+CREATE TABLE IF NOT EXISTS `hacker_news`(
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `title` VARCHAR(120) NOT NULL COMMENT '标题',
-  `category` BIGINT(120) NOT NULL COMMENT '新闻类别',
   `synopsis` VARCHAR(1024) NOT NULL COMMENT '新闻简介',
   `url` VARCHAR(120) NOT NULL COMMENT '新闻地址',
-  `time` VARCHAR(120) NOT NULL COMMENT '发布时间',
+  `time` DATETIME COMMENT '发布时间',
+  PRIMARY KEY (`id`),
+  KEY (`title`),
+  KEY (`synopsis`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='网络信息新闻数据表' AUTO_INCREMENT=1;
+
+--导出 hot_news 表
+DROP TABLE IF EXISTS `hot_news`;
+CREATE TABLE IF NOT EXISTS `hot_news`(
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `title` VARCHAR(120) NOT NULL COMMENT '标题',
+  `synopsis` VARCHAR(1024) NOT NULL COMMENT '新闻简介',
+  `url` VARCHAR(120) NOT NULL COMMENT '新闻地址',
+  `time` DATETIME COMMENT '发布时间',
   PRIMARY KEY (`id`),
   KEY (`title`),
   KEY (`synopsis`)
