@@ -6,8 +6,9 @@ const marked = require('marked');
 const moment = require('moment');
 
 class BlogController extends Controller {
-
-
+    /**
+     * blog详情页面数据查询和处理
+     */
     async detail() {
         const ctx = this.ctx;
         const blogId = ctx.params.id;
@@ -16,11 +17,12 @@ class BlogController extends Controller {
                 'id': blogId
             }
         });
+        ctx.body = blog.visits;
         await ctx.model.Blog.update({
-            'visits': blog.visits + 1
+            'visits': blog.visits+1
         }, {
             where: {
-                id: blog.id
+                id: blogId
             }
         });
         if (moment(blog.update_html).isBefore(blog.updated_all)) {
@@ -43,12 +45,12 @@ class BlogController extends Controller {
                 }
             });
         }
-        ctx.body = blog;
+        // ctx.body = blog;
         return blog;
     }
-
-
-
+/**
+ * blog列表界面数据查询和处理
+ */
     async blogList() {
         const ctx = this.ctx;
         const currentPage = ctx.query.count || 1;

@@ -48,6 +48,10 @@
     "type": "git",
     "url": ""
   },
+<<<<<<< HEAD
   "author": "",
+=======
+  "author": "jakysing",
+>>>>>>> console-vata
   "license": "MIT"
 }
