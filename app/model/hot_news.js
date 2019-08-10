@@ -3,7 +3,8 @@
 module.exports = app => {
     const {
         INTEGER,
-        STRING
+        STRING,
+        DATE
     } = app.Sequelize;
     const News = app.model.define('hot_news', {
         id: {
@@ -12,7 +13,8 @@ module.exports = app => {
         },
         title: STRING,
         synopsis: STRING,
-        url: STRING
+        url: STRING,
+        time:DATE
     });
     return News;
 }

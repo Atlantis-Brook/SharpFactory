@@ -17,11 +17,12 @@ class BlogController extends Controller {
                 'id': blogId
             }
         });
+        ctx.body = blog.visits;
         await ctx.model.Blog.update({
-            'visits': blog.visits + 1
+            'visits': blog.visits+1
         }, {
             where: {
-                id: blog.id
+                id: blogId
             }
         });
         if (moment(blog.update_html).isBefore(blog.updated_all)) {
@@ -44,7 +45,7 @@ class BlogController extends Controller {
                 }
             });
         }
-        ctx.body = blog;
+        // ctx.body = blog;
         return blog;
     }
 /**
