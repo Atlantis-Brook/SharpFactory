@@ -1,14 +1,13 @@
 <template>
     <div class="header_background">
         <div class="wrapper">
-            <span><img src="../assets/logo.png" class="logo" alt="">    </span>
+            <span><a href="#/"><img src="../assets/logo.png" class="logo" alt=""> </a>   </span>
             <nav>
                 <ul>
-                    <li><a href="#">首页</a></li>
                     <li><a href="#">关于我们</a></li>
                     <li><a href="#">为您服务</a></li>
-                    <li><a href="#">博客聚合</a></li>
-                    <li><a href="#">新闻事件</a></li>
+                    <li><a href="#/blogs">博客聚合</a></li>
+                    <li><a href="#/news">新闻事件</a></li>
                     <li><a href="#">网址导航</a></li>
                 </ul>
             </nav>
@@ -36,8 +35,8 @@ export default {
     float: left;
 }
 nav{
-    width: 800px;
-    padding-left:50px;
+    width: 700px;
+    padding-left:110px;
     padding-top: 45px;
     float: left;
 }

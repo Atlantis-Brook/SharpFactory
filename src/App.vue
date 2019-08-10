@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <base-header />
+    <base-header v-show="!(path === $route.params.pathMatch)" />
     <router-view/>
-    <base-footer />
+    <base-footer v-show="!(path === $route.params.pathMatch)" />
   </div>
 </template>
 
@@ -12,7 +12,23 @@ import Footer from '@/components/Footer'
 
 export default {
   name: 'App',
-  components: { BaseHeader: Header, BaseFooter: Footer }
+  components: {
+     BaseHeader: Header,
+     BaseFooter: Footer 
+    },
+  data(){
+    return{
+      path:''
+    }
+  },
+  mounted(){
+    this.path = this.$route.path;
+  },
+  watch:{
+    $route(to,from){
+      this.path = to.path;
+    }
+  }
 }
 </script>
 

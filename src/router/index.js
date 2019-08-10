@@ -7,6 +7,7 @@ import Blogs from '@/views/Blogs'
 import NewDetails from '@/views/NewDetails'
 import BlogDetails from '@/views/BlogDetails'
 
+
 Vue.use(Router)
 
 export default new Router({
@@ -32,7 +33,7 @@ export default new Router({
       component:Blogs
     },
     {
-      path: '/blogs/details',
+      path: '/blogs/details/:id',
       name: 'BlogDetails',
       component: BlogDetails
     },

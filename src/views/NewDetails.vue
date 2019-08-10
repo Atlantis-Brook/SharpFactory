@@ -21,7 +21,7 @@
             </div>
             <hr class="hr">
              <div class="pageChange">
-               <div class="pageLeft"> <button><</button></div>
+               <div class="pageLeft"> <button></button></div>
               <div class="page-p"><div>上一个页面</div>
                <div>下一个页面 </div></div>
                <div class="pageRight"><button>></button></div>

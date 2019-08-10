@@ -41,9 +41,7 @@
                         <p class="textAuthon">{{item.authon}}</p>
                         <p class="textContent">{{item.listContent}}</p>
                     </div>
-                    <div class="listInto">
-                        <button class="button">DETAILS</button>
-                    </div>
+                        <button class="button"style="top:80px;right:50px;height:30px;width:105px">DETAILS</button>
                     </div>
                 </li>
             </ul>
@@ -389,9 +387,6 @@ export default {
     cursor: pointer;
 }
 
-
-
-
 .pageChange>a{
     display: inline-block;
     width: 51px;
@@ -410,6 +405,4 @@ export default {
     top: 20px;
     left: 18px;
 }
-
-
 </style> 

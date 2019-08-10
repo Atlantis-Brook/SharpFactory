@@ -10,6 +10,11 @@ import '@/assets/css/basic.css'
 import '@/assets/js/mobile_or_pc.js'
 
 /* eslint-disable no-new */
+
+router.afterEach((to,from,next) => {
+  window.scrollTo(0,0);
+});
+
 new Vue({
   el: '#app',
   router,

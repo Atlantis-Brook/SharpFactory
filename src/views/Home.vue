@@ -7,12 +7,12 @@
       <div class="about-us">
         <div class="left">
           <h1 class="fsz-24">ABOUT US</h1>
-          <h2 class="fsz-20">关于尖端工作室</h2>
-          <p class="fsz-24">描述描述描述描述描述描述描述描述<br>描述描述描述描述描述</p>
+          <h2 class="fsz-20">关于我们</h2>
+          <p class="fsz-24">Sharpfactory<br>工作室概要</p>
           <div class="cut-line"></div>
-          <p class="p1">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</p>
-          <p class="p2">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</p>
-          <p class="p3">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</p>
+          <p class="p1">&#12288&#12288工作室成立于2016年，旨在聚集大学生计算机网络和软件开发爱好者，进行合作学习、钻研和相关产品开发活动的非盈利性组织。</p>
+          <p class="p2">&#12288&#12288工作室人员主要由贵州大学等高校大学生组成，每年面向贵阳各高校招收人才。</p>
+          <p class="p3">&#12288&#12288工作室招新无技术门槛要求，由工作室成员组织进行前期技术培训和相关知识补充，以便于后期的学习和实战开发工作。</p>
           <div class="button">MORE ABOUT US</div>
         </div>
         <div class="right">
@@ -120,7 +120,7 @@
           <div class="middle">
             <h2 class="fsz-20">创意网站建设</h2>
             <hr>
-            <p>针对企业言网、品牌网站全案、电子商务网站、行业门户网菇等，提供完美解决方案。UI设计、前端编写、后端实现、服<br>务器部署上线以及网站后期维护全权负责。给您高质量、高效率、高性价比的服务。</p>
+            <p>针对企业言网、品牌网站全案、电子商务网站、行业门户网站等，提供完美解决方案。UI设计、前端编写、后端实现、服<br>务器部署上线以及网站后期维护全权负责。给您高质量、高效率、高性价比的服务。</p>
           </div>
           <div class="right">
             <div class="change-pages-right">></div>
@@ -139,52 +139,22 @@
           <p class="fsz-18">记录<br>是一种习惯</p>
         </div>
       </div>
-      <div class="tip">
+      <div class="tip" v-for="item of result.blog">
         <div class="Day">
           <div class="day">
-            <h1 class="fsz-24">14</h1>
-            <p>2018.05</p>
+            <h1 class="fsz-24">{{item.day}}</h1>
+            <p>{{item.year}}.{{item.month}}</p>
           </div>
         </div>
         <div class="passage">
-          <p class="fsz-18">特殊需求儿童的挑战。</p>
-          <p>灯塔学校成立于1967年，为马萨诸塞州大洛厄尔地区的特殊需求学生提供教育机会，因为他们没有替代资源。直到1973年《马萨诸塞州特殊教育法》第766章出台之前，该校完全依靠名义上的家长捐款作为资金来源。</p>
+          <p class="fsz-18">{{item.title}}</p>
+          <p>{{item.synopsis}}</p>
         </div>
         <div class="details"><!-- 细节、详细资料 <-->
-          <div class="button">DETAILS</div>
+          <a class="button" href="#/blogs/details/:id">DETAILS</a>
         </div>
       </div>
-      <div class="tip">
-        <div class="Day">
-          <div class="day">
-            <h1 class="fsz-24">14</h1>
-            <p>2018.05</p>
-          </div>
-        </div>
-        <div class="passage">
-          <p class="fsz-18">特殊需求儿童的挑战。</p>
-          <p>灯塔学校成立于1967年，为马萨诸塞州大洛厄尔地区的特殊需求学生提供教育机会，因为他们没有替代资源。直到1973年《马萨诸塞州特殊教育法》第766章出台之前，该校完全依靠名义上的家长捐款作为资金来源。</p>
-        </div>
-        <div class="details"><!-- 细节、详细资料 <-->
-          <div class="button">DETAILS</div>
-        </div>
-      </div>
-      <div class="tip">
-        <div class="Day">
-          <div class="day">
-            <h1 class="fsz-24">14</h1>
-            <p>2018.05</p>
-          </div>
-        </div>
-        <div class="passage">
-          <p class="fsz-18">特殊需求儿童的挑战。</p>
-          <p>灯塔学校成立于1967年，为马萨诸塞州大洛厄尔地区的特殊需求学生提供教育机会，因为他们没有替代资源。直到1973年《马萨诸塞州特殊教育法》第766章出台之前，该校完全依靠名义上的家长捐款作为资金来源。</p>
-        </div>
-        <div class="details"><!-- 细节、详细资料 <-->
-          <div class="button">DETAILS</div>
-        </div>
-      </div>
-      <div class="button">MORE BLOGS</div>
+      <a class="button" href="#/blogs">MORE BLOGS</a>
     </div>
     <div class="middle5">
       <div class="title">
@@ -196,57 +166,47 @@
           <p class="fsz-18">新闻随时更新<br>请关注</p>
         </div>
       </div>
-      <div class="tip">
+      <div class="tip" v-for="item of result.news">
         <div class="Day">
           <div class="day">
-            <h1 class="fsz-24">14</h1>
-            <p>2018.05</p>
+            <h1 class="fsz-24">{{item.day}}</h1>
+            <p>{{item.year}}.{{item.month}}</p>
           </div>
         </div>
         <div class="passage">
-          <p class="fsz-18">特殊需求儿童的挑战。</p>
-          <p>灯塔学校成立于1967年，为马萨诸塞州大洛厄尔地区的特殊需求学生提供教育机会，因为他们没有替代资源。直到1973年《马萨诸塞州特殊教育法》第766章出台之前，该校完全依靠名义上的家长捐款作为资金来源。</p>
+          <p class="fsz-18">{{item.title}}</p>
+          <p>{{item.synopsis}}</p>
         </div>
         <div class="details"><!-- 细节、详细资料 <-->
-          <div class="button">DETAILS</div>
+          <a class="button" :href="geturl(item.url)">DETAILS</a>
         </div>
       </div>
-      <div class="tip">
-        <div class="Day">
-          <div class="day">
-            <h1 class="fsz-24">14</h1>
-            <p>2018.05</p>
-          </div>
-        </div>
-        <div class="passage">
-          <p class="fsz-18">特殊需求儿童的挑战。</p>
-          <p>灯塔学校成立于1967年，为马萨诸塞州大洛厄尔地区的特殊需求学生提供教育机会，因为他们没有替代资源。直到1973年《马萨诸塞州特殊教育法》第766章出台之前，该校完全依靠名义上的家长捐款作为资金来源。</p>
-        </div>
-        <div class="details"><!-- 细节、详细资料 <-->
-          <div class="button">DETAILS</div>
-        </div>
-      </div>
-      <div class="tip">
-        <div class="Day">
-          <div class="day">
-            <h1 class="fsz-24">14</h1>
-            <p>2018.05</p>
-          </div>
-        </div>
-        <div class="passage">
-          <p class="fsz-18">特殊需求儿童的挑战。</p>
-          <p>灯塔学校成立于1967年，为马萨诸塞州大洛厄尔地区的特殊需求学生提供教育机会，因为他们没有替代资源。直到1973年《马萨诸塞州特殊教育法》第766章出台之前，该校完全依靠名义上的家长捐款作为资金来源。</p>
-        </div>
-        <div class="details"><!-- 细节、详细资料 <-->
-          <div class="button">DETAILS</div>
-        </div>
-      </div>
-      <div class="button">MORE NEWS</div>
+      <a class="button" href="#/news">MORE NEWS</a>
     </div>
   </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
+  data(){
+    return{
+      result:[],
+      walking:null
+    }
+  },
+  created(){
+    axios.get('http://127.0.0.1:7001/').then(
+      Response=>{
+        this.result = Response.data;
+      }
+    )
+  },
+  methods:{
+    geturl:function(val){
+      return val;
+    },
+
+  }
 
 }
 </script>

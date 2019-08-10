@@ -5,18 +5,23 @@
             <div class="newsContent">
                 <div class="newsEvents">
                     <span class="title">news & events</span>
-                    <div class="path">首页 <span>></span> 新闻事件</div>
+                    <div class="path">首页 <span>></span>新闻事件</div>
                 </div>
             </div>
         </div>
         <div class="newsModule ourModule">
             <div class="newsContent">
-                <news-list :title="ourNews" :lists="list"></news-list>
+                <news-list :title="hotNews" :lists="hotNews"></news-list>
             </div>
         </div>
         <div class="newsModule hackerModule">
             <div class="newsContent">
-                <news-list :title="hackerNews" :lists="list"></news-list>
+                <news-list :title="hackerNews" :lists="hackerNews"></news-list>
+            </div>
+        </div>
+        <div class="newsModule hackerModule">
+            <div class="newsContent">
+                <news-list :title="ourNews" :lists="hackerNews"></news-list>
             </div>
         </div>
    </div>
@@ -25,33 +30,58 @@
 <script>
 
 import NewsList from '@/components/NewsList'
+import Axios from 'axios';
 
 export default {
    components: { "news-list":NewsList },
     data() {
        return {
-            list: [{
-                day: '18',
-                notDay: '2019.04',
-                listTitle: '我是标题-18',
-                listContent: '我不是标题，我是内容，嘿嘿嘿-18'
-            }, {
-                day: '19',
-                notDay: '2019.04',
-                listTitle: '我是标题-19',
-                listContent: '我不是标题，我是内容，嘿嘿嘿-19'
-            }],
+           hotNewsLists:[],
+           hackerNewsLists:[],
             hackerNews:{
                 titleEn: "HACKER NEWS",
                 titleCh: "黑客新闻"
+            },
+            hotNews:{
+                titleEn: "HOT NEWS",
+                titleCh: "热点新闻"
             },
             ourNews:{
                 titleEn: "OUR NEWS",
                 titleCh: "工作室新闻"
             }
-       };
+       }
+    },
+    created(){
+        function getHotNews() {
+            return Axios.get('http://127.0.0.1:7001/news/hotNewsList/',{
+                params:{
+                    id:1
+                }
+            });
+        }
+        function getHackerNews() {
+            return Axios.get('http://127.0.0.1:7001/news/hackerNewsList/1');
+        }
+        Axios.all([getHotNews(),getHackerNews()]).then(
+            Axios.spread(function (hotNews,hackerNews) {
+                // this.hotNewsLists = hotNews.data;
+                // this.hackerNewsLists = hackerNews.data;
+                console.log(hackerNews);
+                console.log(hotNews);
+            })
+        )
+
     },
    methods: {
+        newsList:function(url,currentPage,pageSize) {
+            Axios.get(url,{
+                params:{
+                    currentPage:currentPage,
+                    pageSize:pageSize
+                }
+            }).then()
+        }
        
    },
 }

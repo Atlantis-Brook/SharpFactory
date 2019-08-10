@@ -17,22 +17,20 @@
                     <div class="listTime">
                         <div>
                             <p class="listTimeDay">{{item.day}}</p>
-                            <p class="listTimeMinute">{{item.notDay}}</p>
+                            <p class="listTimeMinute">{{item.year}}.{{item.month}}</p>
                         </div>
                     </div>
                     <div class="listText">
                         <div>
-                        <p class="textTitle">{{item.listTitle}}</p>
-                        <p class="textContent">{{item.listContent}}</p>
+                        <p class="textTitle">{{item.title}}</p>
+                        <p class="textContent">{{item.synopsis}}</p>
                         </div>
                     </div>
-                    <div class="listInto">
-                        <button>DETAILS</button>
-                    </div>
+                        <button class="button">DETAILS</button>
                 </li>
             </ul>
             <div class="pageChange">
-                <button></button>
+                <button><</button>
                 <a href="">1</a>
                 <a href="">2</a>
                 <a href="">3</a>
@@ -184,28 +182,6 @@ export default {
     font-size: 16px;
     font-weight: 700;
     padding-bottom: 18px;
-}
-
-.listContent li .listInto{
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    width: 166px;
-    height: 166px;
-}
-
-.listContent li .listInto>button{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffd233;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 16px;
-    padding: 6px 14px;
 }
 
 .pageChange{
