@@ -13,7 +13,7 @@
         </div>
         <div class="listContent">
             <ul>
-                <li v-for="item of lists">
+                <li v-for="item of lists.rows">
                     <div class="listTime">
                         <div>
                             <p class="listTimeDay">{{item.day}}</p>
@@ -23,10 +23,10 @@
                     <div class="listText">
                         <div>
                         <p class="textTitle">{{item.title}}</p>
-                        <p class="textContent">{{item.synopsis}}</p>
+                        <p class="textContent" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;" >{{item.synopsis}}</p>
                         </div>
                     </div>
-                        <button class="button">DETAILS</button>
+                        <a class="button" :href="geturl(item.url)" style="left:50px;">DETAILS</a>
                 </li>
             </ul>
             <div class="pageChange">
@@ -53,6 +53,9 @@ export default {
        };
     },
    methods: {
+       geturl:function(val){
+           return val;
+       }
        
    },
 }

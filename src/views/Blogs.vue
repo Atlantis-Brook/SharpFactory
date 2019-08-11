@@ -29,19 +29,19 @@
               </div>
               <div class="listContent">
               <ul>
-                <li v-for="item of lists">
+                <li v-for="item of result.rows">
                     <div class="blogs-introduction">
                     <div class="listTime">
                          <p class="listTimeDay">{{item.day}}</p>
-                         <p class="listTimeMinute">{{item.notDay}}</p>
+                         <p class="listTimeMinute">{{item.year}}.{{item.month}}</p>
 
                     </div>
                     <div class="listText">
-                        <p class="textTitle">{{item.listTitle}}</p>
-                        <p class="textAuthon">{{item.authon}}</p>
-                        <p class="textContent">{{item.listContent}}</p>
+                        <p class="textTitle">{{item.title}}</p>
+                        <p class="textAuthon">{{item.user}}</p>
+                        <p class="textContent">{{item.synopsis}}</p>
                     </div>
-                        <button class="button"style="top:80px;right:50px;height:30px;width:105px">DETAILS</button>
+                        <a class="button"style="top:80px;right:50px;height:21px;width:58px" href="#/blogs/details/" @click="$store.commit('getBlogId',item.id)">DETAILS</a>
                     </div>
                 </li>
             </ul>
@@ -59,70 +59,21 @@
      </div>
 </template>
 <script>
+import Axios from 'axios';
 export default {
+    name:'Blog',
     data() {
        return {
-            lists: [{
-                day: '18',
-                notDay: '2019.04',
-                authon:'作者1' ,               listTitle: '标题1',
-                listContent: '内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1'
-            }, {
-                day: '19',
-                notDay: '2019.04',
-                authon:'作者2',
-                listTitle: '标题2',
-                listContent: '内容2'
-            }, {
-                day: '19',
-                notDay: '2019.04',
-                authon:'作者3' ,
-                listTitle: '标题3',
-                listContent: '内容3'
-            }, {
-                day: '19',
-                notDay: '2019.04',
-                authon:'作者4' ,
-                listTitle: '标题4',
-                listContent: '内容4'
-            }, {
-                day: '19',
-                notDay: '2019.04',
-                authon:'作者5' ,
-                listTitle: '标题5',
-                listContent: '内容5'
-            }, {
-                day: '19',
-                notDay: '2019.04',
-                authon:'作者6' ,
-                listTitle: '标题6',
-                listContent: '内容6'
-            }, {
-                day: '19',
-                notDay: '2019.04',
-                authon:'作者7' ,
-                listTitle: '标题7',
-                listContent: '内容7'
-            }, {
-                day: '19',
-                notDay: '2019.04',
-                authon:'作者8' ,
-                listTitle: '标题8',
-                listContent: '内容8'
-            }, {
-                day: '19',
-                notDay: '2019.04',
-                authon:'作者9' ,
-                listTitle: '标题9',
-                listContent: '内容9'
-            } ,{
-                day: '19',
-                notDay: '2019.04',
-                authon:'作者10' ,
-                listTitle: '标题10',
-                listContent: '内容10'
-            }]
-       };
+           result:[]
+       }
+    },
+    created(){
+        Axios.get('http://127.0.0.1:7001/blog/list/').then(
+            Response=>{
+                this.result = Response.data;
+            })
+    },
+    methods:{
     }
 
 }
@@ -349,7 +300,11 @@ export default {
     text-align: left;
     font-size: 14px;
     width: 700px;
-    word-wrap:break-word
+    word-wrap:break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 
 .listContent li .listInto{

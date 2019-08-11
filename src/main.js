@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import store from './stroe'
 Vue.config.productionTip = false
 
 import '@/assets/css/basic.css'
@@ -15,9 +15,14 @@ router.afterEach((to,from,next) => {
   window.scrollTo(0,0);
 });
 
+
+/**
+ * 实例化vue对象
+ */
 new Vue({
   el: '#app',
   router,
+  store, //加入stroe对象
   components: { App },
   template: '<App/>'
 })

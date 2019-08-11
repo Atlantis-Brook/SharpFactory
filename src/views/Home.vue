@@ -53,8 +53,8 @@
           </div>
           <div class="wave-border">
             <div class="left">
-              <p class="fsz-18">Sharpfactory官网</p>
-              <p>2019年4月</p>
+              <p class="fsz-18">智能线上编译系统</p>
+              <p>2019年9月</p>
             </div>
             <div class="right">
               <div class="change-pages-right">></div>
@@ -67,8 +67,8 @@
           </div>
           <div class="wave-border">
             <div class="left">
-              <p class="fsz-18">Sharpfactory官网</p>
-              <p>2019年4月</p>
+              <p class="fsz-18">校园+</p>
+              <p>2019年9月</p>
             </div>
             <div class="right">
               <div class="change-pages-right">></div>
@@ -148,7 +148,7 @@
         </div>
         <div class="passage">
           <p class="fsz-18">{{item.title}}</p>
-          <p>{{item.synopsis}}</p>
+          <p style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;">{{item.synopsis}}</p>
         </div>
         <div class="details"><!-- 细节、详细资料 <-->
           <a class="button" href="#/blogs/details/:id">DETAILS</a>
@@ -175,7 +175,7 @@
         </div>
         <div class="passage">
           <p class="fsz-18">{{item.title}}</p>
-          <p>{{item.synopsis}}</p>
+          <p style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;" >{{item.synopsis}}</p>
         </div>
         <div class="details"><!-- 细节、详细资料 <-->
           <a class="button" :href="geturl(item.url)">DETAILS</a>
@@ -186,7 +186,7 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
+import Axios from 'axios'
 export default {
   data(){
     return{
@@ -195,11 +195,10 @@ export default {
     }
   },
   created(){
-    axios.get('http://127.0.0.1:7001/').then(
+    Axios.get('http://127.0.0.1:7001/').then(
       Response=>{
         this.result = Response.data;
-      }
-    )
+      })
   },
   methods:{
     geturl:function(val){

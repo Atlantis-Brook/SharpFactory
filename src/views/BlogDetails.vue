@@ -2,15 +2,17 @@
     <div class="blogDetails">
       <div class="blogMiddle">
         <div class="blogHint">
-          <span class="blogHintLeft">our blog</span>
+          <span class="blogHintLeft">BLOG</span>
           <span class="blogHintRight">
-            首页<span style="color:#9a9a9a"> > </span>博客聚合<span style="color:#9a9a9a"> > </span>博客详情
+            首页<span style="color:#9a9a9a"> > </span>博客聚合<span style="color:#9a9a9a"> > </span>详情
           </span>
         </div>
         <div class="blogContent">
           <div class="blogTitleMes">
             <span class="blogTitle">博客标题</span>
-            <span class="blogTime">2019.05.03</span>
+            <span style="font-size:2px;position:absolute;top:50px;color:#9a9a9a">访问：{{details.visits}}</span>
+            <span class="blogTime">{{details.user}}</span><br/>
+            <span class="blogTime">{{details.year}}.{{detils.month}}.{{details.day}}</span>
           </div>
           <div class="mark"></div>
           <article>
@@ -125,10 +127,10 @@
         <footer>
           <div class="upPagerBox">
             <a href="#" class="upPager changePager"><</a>
-            <a href="#" class="cMes" style="margin-left: 20px;">上一条新闻</a>
+            <a href="#" class="cMes" style="margin-left: 20px;">上一条</a>
           </div>
           <div class="nextPagerBox">
-            <a href="#" class="cMes" style="margin-right: 20px;">下一条新闻</a>
+            <a href="#" class="cMes" style="margin-right: 20px;">下一条</a>
             <a href="#" class="nextPager changePager">></a>
           </div>
         </footer>
@@ -136,12 +138,25 @@
     </div>
 </template>
 <script>
+import Axios from 'axios';
 export default {
     name: "blogDetails",
     data () {
       return {
-          
+          details:[]
       };
+    },
+    created(){
+      Axios.get('http://127.0.0.1:7001/blog/detail/',{
+        params:{
+          id:$store.getters.id
+        }
+      }).then(
+        Response=>{
+          this.details = Response.data;
+          console.log(Response.data);
+        }
+      )
     }
 }
 </script>

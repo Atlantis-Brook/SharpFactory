@@ -11,19 +11,19 @@
         </div>
         <div class="newsModule ourModule">
             <div class="newsContent">
-                <news-list :title="hotNews" :lists="hotNews"></news-list>
+                <news-list :title="hotNews" :lists="hotNewsLists"></news-list>
             </div>
         </div>
         <div class="newsModule hackerModule">
             <div class="newsContent">
-                <news-list :title="hackerNews" :lists="hackerNews"></news-list>
+                <news-list :title="hackerNews" :lists="hackerNewsLists"></news-list>
             </div>
         </div>
-        <div class="newsModule hackerModule">
+        <!-- <div class="newsModule hackerModule">
             <div class="newsContent">
-                <news-list :title="ourNews" :lists="hackerNews"></news-list>
+                <news-list :title="ourNews" :lists="hackerNewsLists"></news-list>
             </div>
-        </div>
+        </div> -->
    </div>
 </template>
 
@@ -54,21 +54,15 @@ export default {
     },
     created(){
         function getHotNews() {
-            return Axios.get('http://127.0.0.1:7001/news/hotNewsList/',{
-                params:{
-                    id:1
-                }
-            });
+            return Axios.get('http://127.0.0.1:7001/news/hotNewsList/');
         }
         function getHackerNews() {
-            return Axios.get('http://127.0.0.1:7001/news/hackerNewsList/1');
+            return Axios.get('http://127.0.0.1:7001/news/hackerNewsList/');
         }
         Axios.all([getHotNews(),getHackerNews()]).then(
-            Axios.spread(function (hotNews,hackerNews) {
-                // this.hotNewsLists = hotNews.data;
-                // this.hackerNewsLists = hackerNews.data;
-                console.log(hackerNews);
-                console.log(hotNews);
+            Axios.spread((hotNews,hackerNews)=>{
+                this.hotNewsLists = hotNews.data;
+                this.hackerNewsLists = hackerNews.data;
             })
         )
 

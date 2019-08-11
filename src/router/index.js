@@ -23,17 +23,12 @@ export default new Router({
       component: News
     },
     {
-      path:'/news/details',
-      name:'NewDetails',
-      component:NewDetails
-    },
-    {
       path:'/blogs',
       name:'Blogs',
       component:Blogs
     },
     {
-      path: '/blogs/details/:id',
+      path: '/blogs/details/',
       name: 'BlogDetails',
       component: BlogDetails
     },
