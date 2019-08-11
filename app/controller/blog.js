@@ -11,22 +11,21 @@ class BlogController extends Controller {
      */
     async detail() {
         const ctx = this.ctx;
-        const blogId = ctx.params.id;
+        const blogId = ctx.query.id;
         let blog = await ctx.model.Blog.findAll({
             where: {
                 'id': blogId
             }
         });
-        ctx.body = blog.visits;
         await ctx.model.Blog.update({
-            'visits': blog.visits+1
+            'visits': blog[0].visits+1
         }, {
             where: {
-                id: blogId
+                id: blog[0].id
             }
         });
-        if (moment(blog.update_html).isBefore(blog.updated_all)) {
-            let html = marked(blog.markdown);
+        if (moment(blog[0].update_html).isBefore(blog[0].updated_all) || blog[0].update_html == null) {
+            let html = marked(blog[0].markdown);
             let update_html = sd.format(new Date(), 'YYYY-MM-DD HH:mm:ss');
             let rule = new RegExp("<.+?>", "g");
             let synopsis = html.replace(rule, '');
@@ -36,16 +35,16 @@ class BlogController extends Controller {
                 'synopsis': synopsis
             }, {
                 where: {
-                    id: blog.id
+                    id: blog[0].id
                 }
             });
-            blog = await ctx.model.Blog.find({
+            blog = await ctx.model.Blog.findAll({
                 where: {
                     'id': blogId
                 }
             });
         }
-        // ctx.body = blog;
+        ctx.body = blog;
         return blog;
     }
 /**
@@ -54,20 +53,21 @@ class BlogController extends Controller {
     async blogList() {
         const ctx = this.ctx;
         const currentPage = ctx.query.count || 1;
-        const pageSize = 15;
+        const pageSize = ctx.query.pageSize || 3;
         const {
             count,
-            blog
-        } = await ctx.model.blog.findAndCount({
+            rows
+        } = await ctx.model.Blog.findAndCountAll({
             offset: (currentPage - 1) * pageSize,
             limit: pageSize
         });
-        ctx.body = blog;
-        ctx.body = count;
-        return {
-            count,
-            blog
-        };
+        for (let index = 0; index < rows.length; index++) {
+            rows[index].dataValues.year = rows[index].created_at.getFullYear();
+            rows[index].dataValues.month = rows[index].created_at.getMonth();
+            rows[index].dataValues.day = rows[index].created_at.getDate();
+          }
+        ctx.body = {rows:rows,count:count};
+        return 0;
 
     }
 

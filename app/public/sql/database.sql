@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `user`(
   `user` VARCHAR(120) NOT NULL COMMENT '用户名',
   `avatar` VARCHAR(120) NOT NULL DEFAULT '/usr/img' COMMENT '头像',
   PRIMARY KEY (`id`),
-  KEY (`user_id`)
+  KEY (`user_id`),
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户基本信息表' AUTO_INCREMENT=1;
 
 -- 导出 user_auths 表
@@ -33,8 +33,9 @@ DROP TABLE IF EXISTS `blog`;
 CREATE TABLE IF NOT EXISTS `blog`(
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `user_id` BIGINT(120) NOT NULL COMMENT '用户id',
+  `user` VARCHAR(120) NOT NULL COMMENT '用户名',
   `title` VARCHAR(120) NOT NULL  COMMENT '标题',
-  `visits` BIGINT(20) COMMENT '访问量',
+  `visits` BIGINT(20) DEFAULT 0 COMMENT '访问量',
   `markdown` TEXT COMMENT 'markdown原文',
   `synopsis` TEXT COMMENT '纯文本形式的大纲',
   `html` TEXT COMMENT 'HTML渲染格式文章',
@@ -43,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `blog`(
   `updated_all` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '字段更新时间',
   PRIMARY KEY (`id`),
   KEY (`title`),
+  KEY(`user`),
   FOREIGN KEY (`user_id`) REFERENCES user(`user_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='blog表' AUTO_INCREMENT=1;
 
