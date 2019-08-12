@@ -45,25 +45,28 @@
                     </div>
                 </li>
             </ul>
-            <div class="pageChange">
-                <button><</button>
-                <a href="" class="active">1</a>
-                <a href="">2</a>
-                <a href="">3</a>
-                <a href="">4</a>
-                <a href="">5</a>
-                <button>></button>
-            </div>
+            <mo-paging 
+            :page-index="currentPage"
+            :total="result.count"
+            :page-size="pageSize"
+            @change="pageChange">
+            </mo-paging>
          </div>
           </div>          
      </div>
 </template>
 <script>
+import Mopaging from '../components/MoPaging'
 import Axios from 'axios';
 export default {
     name:'Blog',
+    components:{
+       "mo-paging":Mopaging
+    },
     data() {
        return {
+           pageSize:3,
+           currentPage:1,
            result:[]
        }
     },
@@ -74,6 +77,21 @@ export default {
             })
     },
     methods:{
+        pageChange (page) {
+            this.currentPage = page;
+            this.getBlog(page,3);
+        },
+        getBlog (currentPage,pageSize) {
+            Axios.get('http://127.0.0.1:7001/blog/list/',{
+                params:{
+                    count: currentPage,
+                    pageSize: pageSize
+                }
+            }).then(
+                Response=>{
+                    this.result = Response.data;
+                })
+        }
     }
 
 }

@@ -1,6 +1,6 @@
 export default {
     state:{
-        id:1
+        id:null
     },
     getters:{
         id(state){

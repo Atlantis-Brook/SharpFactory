@@ -151,7 +151,7 @@
           <p style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;">{{item.synopsis}}</p>
         </div>
         <div class="details"><!-- 细节、详细资料 <-->
-          <a class="button" href="#/blogs/details/:id">DETAILS</a>
+          <a class="button" href="#/blogs/details/" @click="$store.commit('getBlogId',item.id)">DETAILS</a>
         </div>
       </div>
       <a class="button" href="#/blogs">MORE BLOGS</a>

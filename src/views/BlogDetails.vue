@@ -9,130 +9,20 @@
         </div>
         <div class="blogContent">
           <div class="blogTitleMes">
-            <span class="blogTitle">博客标题</span>
-            <span style="font-size:2px;position:absolute;top:50px;color:#9a9a9a">访问：{{details.visits}}</span>
-            <span class="blogTime">{{details.user}}</span><br/>
-            <span class="blogTime">{{details.year}}.{{detils.month}}.{{details.day}}</span>
+            <span class="blogTitle">{{result.title}}</span>
+            <span style="font-size:2px;position:absolute;top:50px;color:#9a9a9a">访问：{{result.visits}}</span>
+            <span class="blogTime">{{result.user}}</span><br/>
+            <span class="blogTime">{{result.year}}.{{result.month}}.{{result.day}}</span>
           </div>
           <div class="mark"></div>
-          <article>
-            this is article!
-            asdasda
-            asdasdaasda
-            sd
-            asd
-            ads
-            asd
-            asd
-            asd
-            asd
-            asdasdasdjkl
-            asdasdakldjaslkd
-            asdasdadsaf
-            asdasdas
-            this is article!
-            asdasda
-            asdasdaasda
-            sd
-            asd
-            ads
-            asd
-            asd
-            asd
-            asd
-            asdasdasdjkl
-            asdasdakldjaslkd
-            asdasdadsaf
-            asdasdasthis is article!
-            asdasda
-            asdasdaasda
-            sd
-            asd
-            ads
-            asd
-            asd
-            asd
-            asd
-            asdasdasdjkl
-            asdasdakldjaslkd
-            asdasdadsaf
-            asdasdasthis is article!
-            asdasda
-            asdasdaasda
-            sd
-            asd
-            ads
-            asd
-            asd
-            asd
-            asd
-            asdasdasdjkl
-            asdasdakldjaslkd
-            asdasdadsaf
-            asdasdasthis is article!
-            asdasda
-            asdasdaasda
-            sd
-            asd
-            ads
-            asd
-            asd
-            asd
-            asd
-            asdasdasdjkl
-            asdasdakldjaslkd
-            asdasdadsaf
-            asdasdasthis is article!
-            asdasda
-            asdasdaasda
-            sd
-            asd
-            ads
-            asd
-            asd
-            asd
-            asd
-            asdasdasdjkl
-            asdasdakldjaslkd
-            asdasdadsaf
-            asdasdasthis is article!
-            asdasda
-            asdasdaasda
-            sd
-            asd
-            ads
-            asd
-            asd
-            asd
-            asd
-            asdasdasdjkl
-            asdasdakldjaslkd
-            asdasdadsaf
-            asdasdasthis is article!
-            asdasda
-            asdasdaasda
-            sd
-            asd
-            ads
-            asd
-            asd
-            asd
-            asd
-            asdasdasdjkl
-            asdasdakldjaslkd
-            asdasdadsaf
-            asdasdas
+          <article v-html="result.html">
           </article>
         </div>
         <footer>
           <div class="upPagerBox">
-            <a href="#" class="upPager changePager"><</a>
-            <a href="#" class="cMes" style="margin-left: 20px;">上一条</a>
           </div>
           <div class="nextPagerBox">
-            <a href="#" class="cMes" style="margin-right: 20px;">下一条</a>
-            <a href="#" class="nextPager changePager">></a>
-          </div>
+          </div> 
         </footer>
       </div>
     </div>
@@ -143,18 +33,18 @@ export default {
     name: "blogDetails",
     data () {
       return {
-          details:[]
+          result:[]
       };
     },
     created(){
       Axios.get('http://127.0.0.1:7001/blog/detail/',{
         params:{
-          id:$store.getters.id
+          id:this.$store.getters.id
         }
       }).then(
         Response=>{
-          this.details = Response.data;
-          console.log(Response.data);
+          this.result = Response.data.blog[0];
+ 
         }
       )
     }
@@ -164,7 +54,14 @@ export default {
 *{
   font-weight: 700;
 }
-
+article  pre{
+  display: block;
+  overflow: auto;
+  background: #f4f4f4;
+  padding: 5px 10px;
+  border: 1px solid #eee;word-wrap:break-word; 
+  white-space: pre-wrap; 
+}
 .blogDetails{
   width: 1200px;
   margin: 0 auto 20px;
@@ -237,7 +134,14 @@ export default {
   font-weight: normal;
   padding-bottom: 100px;
 }
-
+ pre {
+  display: block;
+  overflow: auto;
+  background: #f4f4f4;
+  padding: 5px 10px;
+  border: 1px solid #eee;word-wrap:break-word; 
+  white-space: pre-wrap; 
+}
 .blogDetails footer{
   padding: 50px 0 100px;
   position: relative;

@@ -29,35 +29,56 @@
                         <a class="button" :href="geturl(item.url)" style="left:50px;">DETAILS</a>
                 </li>
             </ul>
-            <div class="pageChange">
-                <button><</button>
-                <a href="">1</a>
-                <a href="">2</a>
-                <a href="">3</a>
-                <a href="">4</a>
-                <a href="">5</a>
-                <button>></button>
-            </div>
+            <mo-paging 
+            :page-index="currentPage"
+            :total="lists.count"
+            :page-size="pageSize"
+            @change="pageChange">
+            </mo-paging>
         </div>
    </div>
 </template>
 
 <script>
-
+import Mopaging from './MoPaging'
+import Axios from 'axios'
 export default {
-    props: [ "title", "lists"],
-   components: {},
-    data() {
-       return {
-
-       };
+   components: {
+       "mo-paging":Mopaging
+   },
+    props: [
+        "title",
+        "lists"
+    ],
+       data() {
+        return {
+            pageSize:3,
+            currentPage:1,
+            lists: this.lists,
+            title: this.title
+        };
     },
-   methods: {
+    methods: {
        geturl:function(val){
            return val;
-       }
-       
+       },
+        pageChange (page) {
+            this.currentPage = page;
+            this.getBlog(page,3);
+        },
+        getBlog (currentPage,pageSize) {
+            Axios.get('http://127.0.0.1:7001/news/hotNewsList/',{
+                params:{
+                    count: currentPage,
+                    pageSize: pageSize
+                }
+            }).then(
+                Response=>{
+                    this.data = Response.data;
+                })
+        }
    },
+
 }
 
 </script>
