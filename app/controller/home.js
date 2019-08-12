@@ -18,7 +18,7 @@ class HomeController extends Controller {
     });
     for (let index = 0; index < blog.length; index++) {
       blog[index].dataValues.year = blog[index].created_at.getFullYear();
-      blog[index].dataValues.month = blog[index].created_at.getMonth();
+      blog[index].dataValues.month = blog[index].created_at.getMonth()+1;
       blog[index].dataValues.day = blog[index].created_at.getDate();
     }
     /**
@@ -33,7 +33,7 @@ class HomeController extends Controller {
     });
     for (let index = 0; index < news.length; index++) {
       news[index].dataValues.year = news[index].time.getFullYear();
-      news[index].dataValues.month = news[index].time.getMonth();
+      news[index].dataValues.month = news[index].time.getMonth()+1;
       news[index].dataValues.day= news[index].time.getDate();
     }
 

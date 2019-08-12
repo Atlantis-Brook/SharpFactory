@@ -5,7 +5,7 @@ class NewsController extends Controller {
         const ctx = this.ctx;
         const currentPage = ctx.query.count || 1;
         console.log(ctx.query.count);
-        const pageSize = ctx.query.pageSize || 3;
+        const pageSize = Number(ctx.query.pageSize) || 3;
         const {count,rows} = await ctx.model.HotNews.findAndCountAll({
             order:[ 
                 ['id','DESC']
@@ -25,7 +25,7 @@ class NewsController extends Controller {
     async hackerNewsList(){
         const ctx = this.ctx;
         const currentPage = ctx.query.count || 1;
-        const pageSize = ctx.query.pageSize || 3;
+        const pageSize = Number(ctx.query.pageSize) || 3;
         const {count,rows} = await ctx.model.HackerNews.findAndCountAll({
             order:[ 
                 ['id','DESC']

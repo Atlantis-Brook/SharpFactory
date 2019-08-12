@@ -44,7 +44,12 @@ class BlogController extends Controller {
                 }
             });
         }
-        ctx.body = blog;
+        for (let index = 0; index < blog.length; index++) {
+            blog[index].dataValues.year = blog[index].created_at.getFullYear();
+            blog[index].dataValues.month = blog[index].created_at.getMonth()+1;
+            blog[index].dataValues.day = blog[index].created_at.getDate();
+          }
+        ctx.body = {blog};
         return blog;
     }
 /**
@@ -53,7 +58,7 @@ class BlogController extends Controller {
     async blogList() {
         const ctx = this.ctx;
         const currentPage = ctx.query.count || 1;
-        const pageSize = ctx.query.pageSize || 3;
+        let pageSize = Number(ctx.query.pageSize) || 3;
         const {
             count,
             rows
@@ -63,7 +68,7 @@ class BlogController extends Controller {
         });
         for (let index = 0; index < rows.length; index++) {
             rows[index].dataValues.year = rows[index].created_at.getFullYear();
-            rows[index].dataValues.month = rows[index].created_at.getMonth();
+            rows[index].dataValues.month = rows[index].created_at.getMonth()+1;
             rows[index].dataValues.day = rows[index].created_at.getDate();
           }
         ctx.body = {rows:rows,count:count};
