@@ -20,9 +20,6 @@ class HomeController extends Controller {
         }
       }
     });
-<<<<<<< HEAD
-    ctx.body = blog;
-=======
     for (let index = 0; index < blog.length; index++) {
       blog[index].dataValues.year = blog[index].created_at.getFullYear();
       blog[index].dataValues.month = blog[index].created_at.getMonth()+1;
@@ -54,7 +51,6 @@ class HomeController extends Controller {
      
     ctx.body = {blog:blog,news:news};
     return 0;
->>>>>>> console-vata
   }
 }
 

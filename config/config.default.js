@@ -23,11 +23,6 @@ module.exports = appInfo => {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
     credentials: true,
   };
-<<<<<<< HEAD
-  
-
-  return config;
-=======
 
   // 网络安全
   config.security = {
@@ -38,5 +33,4 @@ module.exports = appInfo => {
   };
   return config;
 
->>>>>>> console-vata
 };

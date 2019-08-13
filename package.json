@@ -12,7 +12,7 @@
     "egg-scripts": "^2.11.0",
     "egg-sequelize": "^5.0.0",
     "egg-validate": "^2.0.2",
-    "marked": "^0.6.2",
+    "marked": "^0.7.0",
     "moment": "^2.24.0",
     "mysql2": "^1.6.5",
     "silly-datetime": "^0.1.2"
@@ -48,10 +48,6 @@
     "type": "git",
     "url": ""
   },
-<<<<<<< HEAD
-  "author": "",
-=======
   "author": "jakysing",
->>>>>>> console-vata
   "license": "MIT"
 }
