@@ -3,12 +3,16 @@
 const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
+     /**
+     * Summary:首页数据获取
+     * Parameters:
+     *      blog:blog板块前三条数据
+     *      news:news板块前三条数据
+     *      ...
+     * Return:查询结果--Object
+     */
   async index() {
     const  ctx  = this.ctx;
-    console.log(ctx.model);
-    /**
-     * blog数据
-     */
     let blog = await ctx.model.Blog.findAll({  
      where:{
         id:{
