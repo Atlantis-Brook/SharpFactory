@@ -65,8 +65,11 @@ export default {
                 this.hotNewsLists.id = "hotNewsList";
                 this.hackerNewsLists = hackerNews.data;
                 this.hackerNewsLists.id = "hackerNewsList";
-            })
-        )
+            })).catch(
+                    err=>{
+                        this.$router.push('/404');
+                        console.error(err);
+                    })
 
     },
    methods: {
@@ -76,7 +79,13 @@ export default {
                     currentPage:currentPage,
                     pageSize:pageSize
                 }
-            }).then()
+            }).then(
+                
+            ).catch(
+                err=>{
+                    this.$router.push('/404');
+                    console.error(err);
+                })
         }
        
    },

@@ -4,7 +4,8 @@
        <div class="middle">
             <img :src="imgSrc" width="136px" height="136px">
             <h1>404</h1>
-            <h2>Sorry, the page was not found!</h2>
+            <h2>Sorry, A problem has arisen!</h2>
+            <a href="#/">To home >></a>
        </div>
    </div>   
 </template>
@@ -37,7 +38,9 @@ export default {
     margin-top: -100px;
     text-align: center;
 }
-
+.toHome{
+    position: relative;
+}
 img{
     animation: 0.8s picAct alternate infinite;
     user-select: none;
@@ -54,6 +57,14 @@ h1{
 h2{
     color: #bdc3c7;
 }
+a{
+    color: #000000;
+}
+a:hover{
+    color: #002fff;
+    text-decoration: underline;
+}
+
 
 /*
     404表情微动动画

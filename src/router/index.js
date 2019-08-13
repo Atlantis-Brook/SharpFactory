@@ -33,6 +33,11 @@ export default new Router({
       component: BlogDetails
     },
     {
+      path: '/404',
+      name: 'NotFound',
+      component: NotFound
+    },
+    {
       path: '*',
       name: 'NotFound',
       component: NotFound

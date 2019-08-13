@@ -82,7 +82,11 @@ export default {
                     let listId = this.list.id;
                     this.list = Response.data;
                     this.list.id = listId;
-                })
+                }).catch(
+                    err=>{
+                        this.$router.push('/404');
+                        console.error(err);
+                    })
         }
    },
 

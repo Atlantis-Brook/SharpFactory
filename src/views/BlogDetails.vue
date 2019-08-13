@@ -44,9 +44,11 @@ export default {
       }).then(
         Response=>{
           this.result = Response.data.blog[0];
- 
-        }
-      )
+        }).catch(
+            err=>{
+                this.$router.push('/404');
+                console.error(err);
+            })
     }
 }
 </script>

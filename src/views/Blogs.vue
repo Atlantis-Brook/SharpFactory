@@ -74,7 +74,11 @@ export default {
         Axios.get('http://127.0.0.1:7001/blog/list/').then(
             Response=>{
                 this.result = Response.data;
-            })
+            }).catch(
+                err=>{
+                    this.$router.push('/404');
+                    console.error(err);
+                })
     },
     methods:{
         pageChange (page) {
@@ -90,6 +94,10 @@ export default {
             }).then(
                 Response=>{
                     this.result = Response.data;
+                }).catch(
+                err=>{
+                    this.$router.push('/404');
+                    console.error(err);
                 })
         }
     }

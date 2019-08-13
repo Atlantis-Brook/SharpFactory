@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <base-header v-show="!(path === $route.params.pathMatch)" />
+    <base-header v-show="!(path === $route.params.pathMatch || path === '/404')" />
     <router-view/>
-    <base-footer v-show="!(path === $route.params.pathMatch)" />
+    <base-footer v-show="!(path === $route.params.pathMatch || path === '/404')" />
   </div>
 </template>
 
