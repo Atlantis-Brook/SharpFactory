@@ -178,7 +178,7 @@
           <p style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;" >{{item.synopsis}}</p>
         </div>
         <div class="details"><!-- 细节、详细资料 <-->
-          <a class="button" :href="geturl(item.url)">DETAILS</a>
+          <a class="button" target="_blank" :href="geturl(item.url)">DETAILS</a>
         </div>
       </div>
       <a class="button" href="#/news">MORE NEWS</a>

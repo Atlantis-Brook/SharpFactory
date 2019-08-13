@@ -62,7 +62,9 @@ export default {
         Axios.all([getHotNews(),getHackerNews()]).then(
             Axios.spread((hotNews,hackerNews)=>{
                 this.hotNewsLists = hotNews.data;
+                this.hotNewsLists.id = "hotNewsList";
                 this.hackerNewsLists = hackerNews.data;
+                this.hackerNewsLists.id = "hackerNewsList";
             })
         )
 

@@ -13,7 +13,7 @@
         </div>
         <div class="listContent">
             <ul>
-                <li v-for="item of lists.rows">
+                <li v-for="item of list.rows">
                     <div class="listTime">
                         <div>
                             <p class="listTimeDay">{{item.day}}</p>
@@ -26,12 +26,12 @@
                         <p class="textContent" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;" >{{item.synopsis}}</p>
                         </div>
                     </div>
-                        <a class="button" :href="geturl(item.url)" style="left:50px;">DETAILS</a>
+                        <a class="button" :href="geturl(item.url)" target="_blank" style="left:50px;">DETAILS</a>
                 </li>
             </ul>
             <mo-paging 
             :page-index="currentPage"
-            :total="lists.count"
+            :total="list.count"
             :page-size="pageSize"
             @change="pageChange">
             </mo-paging>
@@ -46,17 +46,22 @@ export default {
    components: {
        "mo-paging":Mopaging
    },
-    props: [
-        "title",
-        "lists"
-    ],
+    props: {
+        title:{},
+        lists:{}
+    },
        data() {
         return {
             pageSize:3,
             currentPage:1,
-            lists: this.lists,
-            title: this.title
+            list: this.lists,
         };
+    },
+    watch:{
+        lists: function(newVal,oldVal){
+            this.list = newVal;
+        },
+
     },
     methods: {
        geturl:function(val){
@@ -67,14 +72,16 @@ export default {
             this.getBlog(page,3);
         },
         getBlog (currentPage,pageSize) {
-            Axios.get('http://127.0.0.1:7001/news/hotNewsList/',{
+            Axios.get('http://127.0.0.1:7001/news/'+this.list.id,{
                 params:{
                     count: currentPage,
                     pageSize: pageSize
                 }
             }).then(
                 Response=>{
-                    this.data = Response.data;
+                    let listId = this.list.id;
+                    this.list = Response.data;
+                    this.list.id = listId;
                 })
         }
    },
