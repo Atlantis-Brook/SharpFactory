@@ -13,6 +13,7 @@ module.exports = app => {
             primaryKey: true
         },
         user_id: INTEGER,
+        user:STRING,
         title: STRING,
         visits: INTEGER,
         markdown: TEXT,

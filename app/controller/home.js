@@ -3,12 +3,16 @@
 const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
+     /**
+     * Summary:首页数据获取
+     * Parameters:
+     *      blog:blog板块前三条数据
+     *      news:news板块前三条数据
+     *      ...
+     * Return:查询结果--Object
+     */
   async index() {
     const  ctx  = this.ctx;
-    console.log(ctx.model);
-    /**
-     * blog数据
-     */
     let blog = await ctx.model.Blog.findAll({  
      where:{
         id:{
@@ -21,7 +25,7 @@ class HomeController extends Controller {
 =======
     for (let index = 0; index < blog.length; index++) {
       blog[index].dataValues.year = blog[index].created_at.getFullYear();
-      blog[index].dataValues.month = blog[index].created_at.getMonth();
+      blog[index].dataValues.month = blog[index].created_at.getMonth()+1;
       blog[index].dataValues.day = blog[index].created_at.getDate();
     }
     /**
@@ -36,7 +40,7 @@ class HomeController extends Controller {
     });
     for (let index = 0; index < news.length; index++) {
       news[index].dataValues.year = news[index].time.getFullYear();
-      news[index].dataValues.month = news[index].time.getMonth();
+      news[index].dataValues.month = news[index].time.getMonth()+1;
       news[index].dataValues.day= news[index].time.getDate();
     }
 

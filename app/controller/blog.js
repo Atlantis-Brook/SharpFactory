@@ -7,7 +7,15 @@ const moment = require('moment');
 
 class BlogController extends Controller {
     /**
-     * blog详情页面数据查询和处理
+     * Summary:blog详情页面数据查询和处理
+     * Parameters:
+     *      blogId:需要显示的blog的id
+     *      blog:查询结果
+     *      html:markdown生成的html格式数据
+     *      update_html:更新html数据的时间
+     *      rule:正则切割规则
+     *      synopsi:简介
+     * Return:查询结果--Object
      */
     async detail() {
         const ctx = this.ctx;
@@ -44,16 +52,27 @@ class BlogController extends Controller {
                 }
             });
         }
-        ctx.body = blog;
+        for (let index = 0; index < blog.length; index++) {
+            blog[index].dataValues.year = blog[index].created_at.getFullYear();
+            blog[index].dataValues.month = blog[index].created_at.getMonth()+1;
+            blog[index].dataValues.day = blog[index].created_at.getDate();
+          }
+        ctx.body = {blog};
         return blog;
     }
 /**
- * blog列表界面数据查询和处理
+ * Summary:blog列表界面数据查询和处理
+ * Parameters:
+ *      currentPage:分页查询的当前页码
+ *      pageSize:每页显示的条目数量
+ *      count:查询总条目数量
+ *      rows:查询内容
+ * Return:查询结果--Object
  */
     async blogList() {
         const ctx = this.ctx;
         const currentPage = ctx.query.count || 1;
-        const pageSize = ctx.query.pageSize || 3;
+        let pageSize = Number(ctx.query.pageSize) || 3;
         const {
             count,
             rows
@@ -63,11 +82,24 @@ class BlogController extends Controller {
         });
         for (let index = 0; index < rows.length; index++) {
             rows[index].dataValues.year = rows[index].created_at.getFullYear();
-            rows[index].dataValues.month = rows[index].created_at.getMonth();
+            rows[index].dataValues.month = rows[index].created_at.getMonth()+1;
             rows[index].dataValues.day = rows[index].created_at.getDate();
           }
         ctx.body = {rows:rows,count:count};
         return 0;
+
+    }
+    /**
+     * Summary: blog搜索
+     * Parameters:
+     *      user:获取搜索的作者
+     *      keyWords:获取搜索的内容
+     * Return:查询结果--Object
+     */
+    async blogSearch(){
+        const ctx = this.ctx;
+        const user = ctx || "%%";
+        const keyWords = ctx || "%%";
 
     }
 
