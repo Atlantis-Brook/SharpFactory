@@ -1,5 +1,5 @@
 <template>
-    <div class="blogDetails">
+    <div class="blogDetails top-50">
       <div class="blogMiddle">
         <div class="blogHint">
           <span class="blogHintLeft">BLOG</span>

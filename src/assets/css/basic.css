@@ -174,7 +174,6 @@ nav a:hover {
   position: relative;
   border-radius: 12px 12px 0 0;
 }
-
 .wave-border::after {
   content: '';
   position: absolute;
@@ -187,4 +186,10 @@ nav a:hover {
   background-size: 24px;
   background-repeat: repeat-x;
   /*box-shadow: #000 5px 5px 5px;*/
+}
+
+/* 向上平移50px */
+.top-50 {
+  position: relative;
+  top: -50px;
 }

@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
-    <base-header v-show="!(path === $route.params.pathMatch || path === '/404')" />
-    <router-view/>
-    <base-footer v-show="!(path === $route.params.pathMatch || path === '/404')" />
-  </div>
+<div id="app">
+  <base-header v-show="!(path === $route.params.pathMatch  || path === '/404')" />
+  <router-view/>
+  <base-footer v-show="!(path === $route.params.pathMatch || path === '/404')" />
+</div>
 </template>
 
 <script>
@@ -18,15 +18,15 @@ export default {
     },
   data(){
     return{
-      path:''
+      path: ''
     }
   },
   mounted(){
-    this.path = this.$route.path;
+    this.path = this.$route.path
   },
   watch:{
     $route(to,from){
-      this.path = to.path;
+      this.path = to.path
     }
   }
 }

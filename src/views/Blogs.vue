@@ -1,5 +1,5 @@
 <template>
-    <div class="blogs">
+    <div class="blogs top-50">
        <div class="our-blogs-module module">
           <div class="our-blogs">
               <div class="title">our blogs</div>
