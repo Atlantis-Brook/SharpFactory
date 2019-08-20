@@ -1,3 +1,7 @@
+<!--
+  组件：MoPaging分页
+  隶属：Common公用
+-->
 <template>
     <ul class="mo-paging">
         <!-- prev -->
@@ -16,7 +20,9 @@
 
         <li
         :class="['paging-item', {'paging-item--current' : index === pager}]"
-         v-for="pager in pagers"@click="go(pager)">{{ pager }}</li>
+         v-for="pager in pagers"@click="go(pager)">
+         {{ pager }}
+        </li>
 
         <li
         :class="['paging-item', 'paging-item--more']"

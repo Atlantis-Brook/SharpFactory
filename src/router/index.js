@@ -1,46 +1,102 @@
+/**
+ * 全局路由
+ */
+
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/views/Home'
-import News from '@/components/News'
-import NotFound from '@/views/NotFound'
-import Blogs from '@/views/Blogs'
-import NewDetails from '@/views/NewDetails'
-import BlogDetails from '@/views/BlogDetails'
-
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      redirect: '/home'
     },
+
+    // 首页
+    {
+      path: '/home',
+      name: 'Home',
+      component: () => import('@/views/Home')
+    },
+
+    // 关于我们
+    {
+      path: '/about',
+      name: 'About',
+      component: () => import('@/views/About')
+    },
+    
+    // 为您服务
+    {
+      path: '/service',
+      name: 'Service',
+      component: () => import('@/views/Service')
+    },
+
+    // 新闻列表
     {
       path: '/news',
-      name: 'News',
-      component: News
+      component: () => import('@/views/news/Wrapper'),
+      children: [
+        // 新闻详情
+        {
+          path: 'details/:id',
+          name: 'NewsDetails',
+          component: () => import('@/views/news/Details')
+        },
+        {
+          path: '',
+          name: 'News',
+          component: () => import('@/views/news/News')
+        }
+      ]
     },
+
+    // 博客列表
     {
       path:'/blogs',
-      name:'Blogs',
-      component:Blogs
+      component: () => import('@/views/blogs/Wrapper'),
+      children: [
+        // 博客详情
+        {
+          path: 'details/:id',
+          name: 'BlogDetails',
+          component: () => import('@/views/blogs/Details')
+        },
+        {
+          path: '',
+          name: 'Blogs',
+          component: () => import('@/views/blogs/Blogs')
+        }
+      ]
     },
+
+    // 网址导航
     {
-      path: '/blogs/details/',
-      name: 'BlogDetails',
-      component: BlogDetails
+      path: '/guide',
+      name: 'Guide',
+      component: () => import('@/views/Guide')
     },
+    /*
+    // 留言板
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: () => import('@/views/MessageBoard.vue')
+    }, */
+
+    // 404
     {
       path: '/404',
       name: 'NotFound',
-      component: NotFound
+      component: () => import('@/views/notFound.vue')
     },
     {
       path: '*',
-      name: 'NotFound',
-      component: NotFound
+      redirect: "/404"
     },
   ]
 })

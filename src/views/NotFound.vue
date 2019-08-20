@@ -1,27 +1,24 @@
 <!-- 404 -->
 <template>
-   <div class="notfound">
-       <div class="middle">
-            <img :src="imgSrc" width="136px" height="136px">
-            <h1>404</h1>
-            <h2>Sorry, A problem has arisen!</h2>
-            <a href="#/">To home >></a>
-       </div>
-   </div>   
+  <div class="notfound">
+    <div class="middle">
+      <img :src="imgSrc" width="136px" height="136px">
+      <h1>404</h1>
+      <h2>Sorry, A problem has arisen!</h2>
+      <router-link to="/">To home &gt;&gt;</router-link>
+    </div>
+  </div>   
 </template>
 
 <script>
 
 import pic404 from '@/assets/images/pic_404.png'
 export default {
-    data() {
-           return {
-               imgSrc: pic404
-           };
-       },
-    methods: {
-
-    }
+  data () {
+    return {
+      imgSrc: pic404
+    };
+  }
 }
 </script>
 
