@@ -15,7 +15,7 @@
     <p class="desc">{{ synopsis }}</p>
   </div>
   <div class="right">
-    <span class="button">DETAILS</span>
+    <span class="button" @click="goto">DETAILS</span>
   </div>
 </div>
 </template>
@@ -23,7 +23,18 @@
 <script>
 export default {
   name: 'DataItem',
-  props: ['title', 'synopsis', 'year', 'month', 'day']
+  props: ['title', 'synopsis', 'year', 'month', 'day','id','url'],
+  methods:{
+    goto(){
+      if(this.url){
+        window.open(this.url);
+      }
+      else{
+        this.$router.push('/*');
+
+      }
+    }
+  }
 }
 </script>
 

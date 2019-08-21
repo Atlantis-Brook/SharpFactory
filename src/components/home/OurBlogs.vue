@@ -24,7 +24,7 @@
     </div> -->
     <div class="content-box">
       <loadding :url="url">
-        <data-item v-bind="item" v-for="item of theData.blog" :key="item.id" />
+        <data-item v-bind="item" v-for="item of theData.rows" :key="item.id" />
       </loadding>
     </div>
     <a class="button" href="/blogs">MORE BLOGS</a>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { homeBlogsUrl } from '@/api'
+import { blogList } from '@/api'
 import { blogsTitle } from '@/assets/js/data.js'
 
 import Title from '@/components/common/Title'
@@ -46,8 +46,8 @@ export default {
   data () {
     return {
       titleData: blogsTitle,
-      url: homeBlogsUrl,
-      theData: { blog: [] }
+      url: blogList,
+      theData: { rows: [] }
     }
   }
 }

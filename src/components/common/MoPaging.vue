@@ -60,7 +60,7 @@ export default {
         //每页显示条数
         pageSize : {
             type : Number,
-            default : 1
+            default : 5
         },
 
         //总记录数
