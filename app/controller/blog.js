@@ -71,12 +71,15 @@ class BlogController extends Controller {
  */
     async blogList() {
         const ctx = this.ctx;
-        const currentPage = ctx.query.count || 1;
-        let pageSize = Number(ctx.query.pageSize) || 3;
+        const currentPage = Number(ctx.query.count) || 1;
+        const pageSize = Number(ctx.query.pageSize) || 3;
         const {
             count,
             rows
         } = await ctx.model.Blog.findAndCountAll({
+            order:[
+                ['id','DESC']
+            ],
             offset: (currentPage - 1) * pageSize,
             limit: pageSize
         });
@@ -87,7 +90,6 @@ class BlogController extends Controller {
           }
         ctx.body = {rows:rows,count:count};
         return 0;
-
     }
     /**
      * Summary: blog搜索
