@@ -28,6 +28,9 @@ const loadPrompt = {
   noData: '暂无数据！'
 }
 
+// 页面滑动距离，显示“返回顶部”按钮
+const scrollTop = 760
+
 // 标题信息
 const aboutTitle = { mainTitle: 'ABOUT US', subTitle: '关于我们', desc1: '', desc2: '' }
 const progectsTitle = { mainTitle: 'OUR PROGECTS', subTitle: '项目展示', desc1: '积累经验', desc2: '在努力中不断成长' }
@@ -143,6 +146,7 @@ export {
   topNav,
   bottomNav,
   loadPrompt,
+  scrollTop,
   aboutTitle,
   progectsTitle,
   servicesTitle,

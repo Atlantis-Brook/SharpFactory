@@ -22,7 +22,7 @@ import { aboutPageInfo } from '@/assets/js/data.js'
 import Header from '@/components/common/Header'
 import PageInfo from '@/components/common/PageInfo'
 
-import HeaderBgImg from '@/assets/images/headerbg-news.jpg'
+import HeaderBgImg from '@/assets/images/headerbg-about.jpg'
 
 export default {
   name: 'AboutPage',

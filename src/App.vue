@@ -1,16 +1,18 @@
 <template>
 <div id="app">
   <router-view />
+  <back-top />
   <base-footer />
 </div>
 </template>
 
 <script>
+import BackTop from '@/components/common/BackTop'
 import Footer from '@/components/common/Footer'
 
 export default {
   name: 'App',
-  components: { BaseFooter: Footer },
+  components: { BaseFooter: Footer, BackTop },
   beforeCreate () {
     if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
       // TODO 待域名确定修改
