@@ -54,7 +54,25 @@ export default {
     .then(response => this.$parent.theData = response.data)
     .catch(err => this.error = true)
     .finally(() => this.loadding = false)
-  }
+  },
+  watch:{
+    params:{
+      handler(newValue,oldValue){
+        this.params = newValue;
+        Axios({
+          method: this.method,
+          url: this.url,
+          params: this.params
+        })
+        .then(response => this.$parent.theData = response.data)
+        .catch(err => this.error = true)
+        .finally(() => this.loadding = false)
+      },
+      deep:true
+    }
+  },
+
+
 }
 </script>
 
