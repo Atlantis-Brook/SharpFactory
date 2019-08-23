@@ -1,14 +1,14 @@
 <template>
 <div id="app">
   <router-view />
-  <back-top />
   <base-footer />
+  <back-top />
 </div>
 </template>
 
 <script>
-import BackTop from '@/components/common/BackTop'
 import Footer from '@/components/common/Footer'
+import BackTop from '@/components/common/BackTop'
 
 export default {
   name: 'App',
@@ -81,7 +81,7 @@ hr
 .module
   width 1200px
   margin 0 auto
-  border-radius 0 0 12px 12px
+  border-radius 12px
   margin-bottom 50px
   background-color $sub-bgcolor
 .content-box

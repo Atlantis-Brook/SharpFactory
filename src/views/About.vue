@@ -49,4 +49,5 @@ export default {
   padding 100px 0
   font-weight 700
   font-size 24px
+  border-radius 0 0 12px 12px
 </style>

@@ -3,27 +3,46 @@
   隶属：Common公用
 -->
 <template>
-<div title="返回顶部" id="backTop" @click="backTop">
-  <i class="iconfont icon-fanhuidingbu1"></i>
+<div title="返回顶部" id="backTop" v-show="show" @click="backTop">
+  <i class="iconfont icon-dingbu"></i>
 </div>
 </template>
 
 <script>
+import { backTopX } from '@/assets/js/data.js'
+
 export default {
   name: 'BackTop',
+  data () {
+    return {
+      show: false, // 组件显示
+      scrollTop: 0, // window.scrollTop
+      showScrollTop: backTopX, // 多少距离显示
+      timer: null // 定时器
+    }
+  },
   methods: {
     backTop () {
       clearInterval(this.timer)
-      const target = 0
-      let speed, scrollTop
+      let speed = 0
       this.timer = setInterval(() => {
-        scrollTop = document.documentElement.scrollTop
-        speed = (target - scrollTop) / 10
+        speed = -(this.scrollTop) / 5
         speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed)
-        if (scrollTop === target) clearInterval(this.timer)
-        document.documentElement.scrollTop =  scrollTop + speed
-      }, 30)
+        if (this.scrollTop === 0) clearInterval(this.timer)
+        document.documentElement.scrollTop = document.body.scrollTop = this.scrollTop + speed
+      }, 20)
+    },
+    isShow () {
+      this.scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+      if (this.scrollTop >= this.showScrollTop) this.show = true
+      else this.show = false
     }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.isShow)
+  },
+  willDestroy () {
+    window.removeEventListener('scroll', this.isShow)
   }
 }
 </script>
@@ -31,7 +50,7 @@ export default {
 <style lang="stylus">
 #backTop
   position fixed
-  bottom 160px
+  bottom 50px
   right 50px
   display flex
   align-items center
@@ -56,5 +75,4 @@ export default {
   i.iconfont
     font-size $title-fsz
     font-weight 700
-    // color $sub-bgcolor
 </style>

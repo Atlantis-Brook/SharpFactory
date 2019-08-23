@@ -20,23 +20,31 @@
 </template>
 
 <script>
+import { browseX } from '@/assets/js/data.js'
+
 import Datetime from '@/components/common/Datetime'
+
 export default {
   name: 'GetStart',
   components: { Datetime },
+  data () {
+    return {
+      browseX, // 页面滑动到什么地方
+      timer: null // 定时器
+    }
+  },
   methods: {
     /* 点击"随便看看"按钮事件 */
     slide () {
       clearInterval(this.timer)
-      const target = 760
       let speed, scrollTop
       this.timer = setInterval(() => {
         scrollTop = document.documentElement.scrollTop
-        speed = (target - scrollTop) / 10
+        speed = (this.browseX - scrollTop) / 10
         speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed)
-        if (scrollTop === target) clearInterval(this.timer)
+        if (scrollTop === this.browseX) clearInterval(this.timer)
         document.documentElement.scrollTop =  scrollTop + speed
-      }, 30)
+      }, 20)
     }
   }
 }

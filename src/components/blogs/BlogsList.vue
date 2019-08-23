@@ -64,5 +64,4 @@ export default {
 <style lang="stylus">
 #blogsList
   padding 100px 0
-  border-radius 12px
 </style>
