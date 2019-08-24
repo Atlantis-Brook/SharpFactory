@@ -10,5 +10,6 @@ module.exports = app => {
   router.get('/news/hotNewsList', controller.news.hotNewsList);
   router.get('/news/hackerNewsList',controller.news.hackerNewsList);
   router.get('/news/ourNewsList',controller.news.ourNewsList);
+  router.get('/news/ourNewsDetail', controller.news.ourNewsDetails);
   //router.get('/blog/write',controller.blog.write);
 };

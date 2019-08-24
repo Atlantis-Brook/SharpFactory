@@ -69,5 +69,18 @@ class NewsController extends Controller {
     async ourNewsList(){
 
     }
+    /**
+     * Summary:工作室新闻列表界面数据查询和处理
+     * Parameters:
+     *      currentPage:分页查询的当前页码
+     *      pageSize:每页显示的条目数量
+     *      count:查询总条目数量
+     *      rows:查询内容
+     * Return:查询结果--Object
+     */
+    async ourNewsDetails(){
+
+    }
+
 }
 module.exports = NewsController;
