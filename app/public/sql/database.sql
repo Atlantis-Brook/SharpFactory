@@ -81,12 +81,6 @@ DROP TABLE IF EXISTS `hacker_news`;
 CREATE TABLE IF NOT EXISTS `hacker_news`(
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `title` VARCHAR(120) NOT NULL COMMENT '标题',
-<<<<<<< HEAD
-  `category` BIGINT(120) NOT NULL COMMENT '新闻类别',
-  `synopsis` VARCHAR(1024) NOT NULL COMMENT '新闻简介',
-  `url` VARCHAR(120) NOT NULL COMMENT '新闻地址',
-  `time` VARCHAR(120) NOT NULL COMMENT '发布时间',
-=======
   `synopsis` VARCHAR(1024) NOT NULL COMMENT '新闻简介',
   `url` VARCHAR(120) NOT NULL COMMENT '新闻地址',
   `time` DATETIME COMMENT '发布时间',
@@ -95,19 +89,21 @@ CREATE TABLE IF NOT EXISTS `hacker_news`(
   KEY (`synopsis`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='网络信息新闻数据表' AUTO_INCREMENT=1;
 
---导出 hot_news 表
-DROP TABLE IF EXISTS `hot_news`;
-CREATE TABLE IF NOT EXISTS `hot_news`(
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `title` VARCHAR(120) NOT NULL COMMENT '标题',
-  `synopsis` VARCHAR(1024) NOT NULL COMMENT '新闻简介',
-  `url` VARCHAR(120) NOT NULL COMMENT '新闻地址',
-  `time` DATETIME COMMENT '发布时间',
->>>>>>> console-vata
+-- 导出 our_news 表
+DROP TABLE IF EXISTS `our_news`;
+CREATE TABLE IF NOT EXISTS `our_news`(
+  `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `title` VARCHAR(120) NOT NULL  COMMENT '标题',
+  `visits` BIGINT(20) DEFAULT 0 COMMENT '访问量',
+  `markdown` TEXT COMMENT 'markdown原文',
+  `synopsis` TEXT COMMENT '纯文本形式的大纲',
+  `html` TEXT COMMENT 'HTML渲染格式文章',
+  `update_html` DATETIME COMMENT 'html字段更新时间',
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_all` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '字段更新时间',
   PRIMARY KEY (`id`),
-  KEY (`title`),
-  KEY (`synopsis`)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='热点新闻数据表' AUTO_INCREMENT=1;
+  KEY (`title`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='工作室新闻表' AUTO_INCREMENT=1;
 
 -- 导出 forum 表
 DROP TABLE IF EXISTS `forum`;

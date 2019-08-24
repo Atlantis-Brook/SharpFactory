@@ -6,7 +6,7 @@ module.exports = app => {
         STRING,
         DATE
     } = app.Sequelize;
-    const News = app.model.define('hacker_news', {
+    const hackerNews = app.model.define('hacker_news', {
         id: {
             type: INTEGER,
             primaryKey: true
@@ -16,5 +16,5 @@ module.exports = app => {
         url: STRING,
         time:DATE
     });
-    return News;
+    return hackerNews;
 }
