@@ -8,9 +8,9 @@
   <div class="container">
     <p>欢迎访问<strong> SharpFactory 工作室</strong>，您想：</p>
     <ul>
-      <li><a href="">加入我们</a></li>
-      <li><a href="">委托项目</a></li>
-      <li><a href="/contact">联系我们</a></li>
+      <li @click="to('/join')">加入我们</li>
+      <li @click="to('/commit')">委托项目</li>
+      <li @click="to('/contact')">联系我们</li>
       <li @click="slide()">随便看看</li>
     </ul>
     <span class="vertical-line"></span>
@@ -34,6 +34,11 @@ export default {
     }
   },
   methods: {
+    /* 路由跳转 */
+    to (path) {
+      this.$router.push(path)
+    },
+
     /* 点击"随便看看"按钮事件 */
     slide () {
       clearInterval(this.timer)

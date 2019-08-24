@@ -80,6 +80,14 @@ export default new Router({
       name: 'Guide',
       component: () => import('@/views/Guide')
     },
+    
+    // 加入我们
+    {
+      path: '/join',
+      name: 'Join',
+      component: () => import('@/views/Join.vue')
+    },
+
     /*
     // 留言板
     {
