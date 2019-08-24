@@ -12,9 +12,11 @@ import Article from '@/components/common/Article'
 export default {
   name: 'NewsDetails',
   components: { BaseArticle: Article },
-  data:{
-    tab:this.$route.query.tab,
-    id:this.$route.query.id
-  }
+  data() {
+    return{
+      id:this.$route.query.id,
+      tab:this.$route.query.tab
+    }
+  },
 }
 </script>

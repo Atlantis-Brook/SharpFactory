@@ -56,7 +56,12 @@ export default {
       this.url = newValue;
     },
     theData(newValue,oldValue){
-      this.theData = newValue.blog[0];
+      if(this.tab == "blog"){
+        this.theData = newValue.blog[0];
+      }
+      if(this.tab == "ourNews"){
+        this.theData = newValue.ourNews[0];
+      }
     }
   }
 }
