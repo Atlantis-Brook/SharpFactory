@@ -36,9 +36,7 @@ export default {
         bgImgURL: HeaderBgImg,
         ...guidePageInfo.slogan
       },
-      pageInfo: {
-        ...guidePageInfo.info
-      }
+      pageInfo: guidePageInfo.info
     }
   }
 }

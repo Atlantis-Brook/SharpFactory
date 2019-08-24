@@ -54,6 +54,16 @@ const youCanDo = [
 ]
 
 // 页面信息
+const joinUsPageInfo = {
+  info: {
+    title:'Join Us',
+    breadcrumbs:'首页 > 加入我们',
+  },
+  slogan:{
+    slogan1:'',
+    slogan2:''
+  }
+}
 const aboutPageInfo = {
   info: {
     title: 'About Us',
@@ -187,6 +197,7 @@ export {
   ServiceOurTitle,
   ServiceYouTitle,
   youCanDo,
+  joinUsPageInfo,
   aboutPageInfo,
   servicePageInfo,
   blogsPageInfo,

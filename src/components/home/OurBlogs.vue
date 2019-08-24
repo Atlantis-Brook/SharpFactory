@@ -24,10 +24,10 @@
     </div> -->
     <div class="content-box">
       <loadding :url="url">
-        <data-item v-bind="item" v-for="item of theData.rows" :key="item.id" />
+        <data-item v-bind="item" v-for="item of theData.rows" :key="item.id" :tab= "tab"/>
       </loadding>
     </div>
-    <a class="button" href="/blogs">MORE BLOGS</a>
+    <router-link class="button" to="/blogs">MORE BLOGS</router-link>
   </div>
 </div>
 </template>
@@ -47,6 +47,7 @@ export default {
     return {
       titleData: blogsTitle,
       url: blogList,
+      tab:"blog",
       theData: { rows: [] }
     }
   }

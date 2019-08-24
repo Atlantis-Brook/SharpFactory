@@ -13,5 +13,9 @@ const hackerNewsList = '/news/hackerNewsList'
 const hotNewsList = '/news/hotNewsList'
 //工作室新闻列表数据
 const ourNewsList = '/news/ourNewsList'
+//blog详情数据
+const blogDetails = '/blog/detail'
+//ourNew详情数据
+const ourNewsDetails = '/news/ourNewsDetail'
 
-export { baseUrl, blogList, ourNewsList, hotNewsList, hackerNewsList }
+export { baseUrl, blogList, ourNewsList, hotNewsList, hackerNewsList, blogDetails, ourNewsDetails}

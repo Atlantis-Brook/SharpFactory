@@ -14,7 +14,7 @@
         <p v-for="(item, index) of article.content" :key="index">{{ item }}</p>
       </div>
     </article>
-    <div class="button">MORE ABOUT US</div>
+    <router-link class="button" to="/about">MORE ABOUT US</router-link>
   </div>
   <div class="right">
     <div class="card">

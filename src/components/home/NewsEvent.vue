@@ -12,7 +12,7 @@
         <data-item v-bind="item" v-for="item of theData.rows" :key="item.id" />
       </loadding>
     </div>
-    <a class="button" href="/news">MORE NEWS</a>
+    <router-link class="button" to="/news" >MORE NEWS</router-link>
   </div>
 </div>
 </template>
