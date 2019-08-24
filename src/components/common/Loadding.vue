@@ -53,7 +53,7 @@ export default {
     })
     .then(response => this.$parent.theData = response.data)
     .catch(err => this.error = true)
-    .finally(() => this.loadding = false)
+    .finally(() => this.loadding = false);
   },
   watch:{
     params:{

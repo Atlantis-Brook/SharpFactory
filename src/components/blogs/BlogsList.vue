@@ -9,7 +9,7 @@
     <base-title v-bind="titleData" />
     <loadding :url="url" :params="params">
       <div class="content-box">
-         <data-item v-bind="item" v-for="item of theData.rows" :key="item.id" />
+         <data-item v-bind="item" v-for="item of theData.rows" :key="item.id" :tab= "tab"/>
       </div>
       <mo-paging :total="theData.count" @change="change"/>
     </loadding>
@@ -37,6 +37,7 @@ export default {
         desc2: '是一种习惯'
       },
       url:blogList,
+      tab:"blog",
       params:{
         pageSize:5,
         count:1

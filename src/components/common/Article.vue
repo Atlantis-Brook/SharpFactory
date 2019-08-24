@@ -7,27 +7,56 @@
 -->
 <template>
 <div class="article module">
-  <div class="container">
-    <div class="article-title">
-      <h2 class="title">{{ title }}</h2>
-      <div class="time">{{ time }}</div>
+  <loadding :url="url" :params="params">
+    <div class="container">
+      <div class="article-title">
+        <h2 class="title">{{ theData.title }}</h2>
+        <div class="time">{{ theData.year }}.{{ theData.month }}.{{ theData.day }}</div>
+      </div>
+      <div class="article-info">访问：{{ theData.visits }}<br>作者：{{ theData.user}}</div>
+      <span class="cut-line"></span>
+      <article><span v-html="theData.html" ></span></article>
     </div>
-    <div class="article-info">{{ info }}</div>
-    <span class="cut-line"></span>
-    <article>{{ article }}</article>
-  </div>
+  </loadding>
 </div>
 </template>
 
 <script>
+import Loadding from '@/components/common/Loadding'
+import { blogDetails, ourNewsDetails} from '@/api'
+
 export default {
   name: 'BaseArticle',
+  components:{ Loadding:Loadding },
+  props:['tab',"id"],
   data () {
     return {
-      time: '2019.03.16',
-      title: '标题标题标题标题标题标题',
-      info: '作者：叉叉叉',
-      article: '正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文'
+      params:{
+        id:this.id
+      },
+      url:"",
+      theData:{blog:{}}
+    }
+  },
+  created () {
+     switch (this.tab) {
+       case "blog":
+         this.url = blogDetails;
+         break;
+       case "ourNews":
+         this.url = ourNewsDetails;
+         break;
+       default:
+         this.$router.push('/*');
+         break;
+     };
+  },
+  watch:{
+    url(newValue,oldValue){
+      this.url = newValue;
+    },
+    theData(newValue,oldValue){
+      this.theData = newValue.blog[0];
     }
   }
 }

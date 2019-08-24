@@ -9,7 +9,7 @@
     <base-title v-bind="titleData" />
     <loadding :url="url" :params="params">
       <div class="content-box">
-         <data-item v-bind="item" v-for="item of theData.rows" :key="item.id"/>
+         <data-item v-bind="item" v-for="item of theData.rows" :key="item.id" />
       </div>
       <mo-paging :total="theData.count" @change="change"/>
     </loadding>
@@ -33,6 +33,7 @@ export default {
     return {
       titleData: hackerNewsTitle,
       url:hackerNewsList,
+      tab:"blog",
       params:{
         pageSize:5,
         count:1

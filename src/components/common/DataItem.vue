@@ -23,15 +23,36 @@
 <script>
 export default {
   name: 'DataItem',
-  props: ['title', 'synopsis', 'year', 'month', 'day','id','url'],
+  props: ['title', 'synopsis', 'year', 'month', 'day','id','url','tab'],
   methods:{
     goto(){
       if(this.url){
         window.open(this.url);
       }
       else{
-        this.$router.push('/*');
-
+        switch (this.tab) {
+          case "blog":
+            this.$router.push({
+              path:'/blogs/details',
+              query:{
+                id:this.id,
+                tab:this.tab
+              }
+            })
+            break;
+          case "ourNews":
+            this.$router.push({
+              path:'/news/details',
+              query:{
+                id:this.id,
+                tab:this.tab
+              }
+            })
+            break;
+          default:
+            this.$router.push("/*");
+            break;
+        }
       }
     }
   }

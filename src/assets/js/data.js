@@ -39,6 +39,16 @@ const hackerNewsTitle = { mainTitle: 'HACKER NEWS', subTitle: '黑客新闻', de
 const contactTitle = { mainTitle: 'CONTACT US', subTitle: '留言板', desc1: '期待您的留言', desc2: '我们会尽快地答复' }
 
 // 页面信息
+const joinUsPageInfo = {
+  info: {
+    title:'Join Us',
+    breadcrumbs:'首页 > 加入我们',
+  },
+  slogan:{
+    slogan1:'',
+    slogan2:''
+  }
+}
 const aboutPageInfo = {
   info: {
     title: 'About Us',
@@ -151,6 +161,7 @@ export {
   eventsTitle,
   hackerNewsTitle,
   contactTitle,
+  joinUsPageInfo,
   aboutPageInfo,
   servicePageInfo,
   blogsPageInfo,

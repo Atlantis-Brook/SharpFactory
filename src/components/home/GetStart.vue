@@ -8,9 +8,9 @@
   <div class="container">
     <p>欢迎访问<strong> SharpFactory 工作室</strong>，您想：</p>
     <ul>
-      <li><a href="">加入我们</a></li>
-      <li><a href="">委托项目</a></li>
-      <li><a href="/contact">联系我们</a></li>
+      <li><router-link to="/join">加入我们</router-link></li>
+      <li><router-link to="">委托项目</router-link></li>
+      <li><router-link to="/contact">联系我们</router-link></li>
       <li @click="slide()">随便看看</li>
     </ul>
     <span class="vertical-line"></span>

@@ -43,7 +43,7 @@ export default new Router({
       children: [
         // 新闻详情
         {
-          path: 'details/:id',
+          path: 'details',
           name: 'NewsDetails',
           component: () => import('@/views/news/Details')
         },
@@ -62,7 +62,7 @@ export default new Router({
       children: [
         // 博客详情
         {
-          path: 'details/:id',
+          path: 'details',
           name: 'BlogDetails',
           component: () => import('@/views/blogs/Details')
         },
@@ -87,7 +87,6 @@ export default new Router({
       name: 'Contact',
       component: () => import('@/views/MessageBoard.vue')
     }, */
-
     // 404
     {
       path: '/404',

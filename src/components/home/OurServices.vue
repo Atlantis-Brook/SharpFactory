@@ -21,7 +21,7 @@
         <span>&gt;</span>
       </div>
     </div>
-    <div class="button">LEARN MORE</div>
+    <router-link class="button" to="/service">LEARN MORE</router-link>
   </div>
 </div>
 </template>
