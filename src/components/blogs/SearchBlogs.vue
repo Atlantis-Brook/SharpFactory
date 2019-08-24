@@ -34,6 +34,7 @@ export default {
 
 <style lang="stylus">
 #searchBlogs
+  border-radius 0 0 12px 12px
   .container
     height 70px
     padding 40px 0

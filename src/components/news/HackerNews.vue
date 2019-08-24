@@ -60,5 +60,4 @@ export default {
 <style lang="stylus">
 #hackerNews
   padding 100px 0
-  border-radius 12px
 </style>

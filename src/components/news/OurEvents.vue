@@ -38,4 +38,5 @@ export default {
 <style lang="stylus">
 #ourEvents
   padding 100px 0
+  border-radius 0 0 12px 12px
 </style>

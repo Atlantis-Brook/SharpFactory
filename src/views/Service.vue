@@ -7,11 +7,8 @@
   <base-header v-bind="headerData" />
   <main id="service">
     <page-info v-bind="pageInfo" />
-    <div class="temp module">
-      <div class="container">
-        为您服务 TODO
-      </div>
-    </div>
+    <our />
+    <you />
   </main>
 </div>
 </template>
@@ -21,14 +18,18 @@ import { servicePageInfo } from '@/assets/js/data.js'
 
 import Header from '@/components/common/Header'
 import PageInfo from '@/components/common/PageInfo'
+import Our from '@/components/service/Our'
+import You from '@/components/service/You'
 
-import HeaderBgImg from '@/assets/images/headerbg-news.jpg'
+import HeaderBgImg from '@/assets/images/headerbg-service.jpg'
 
 export default {
   name: 'AboutPage',
   components: {
     BaseHeader: Header,
-    PageInfo
+    PageInfo,
+    Our,
+    You
   },
   data () {
     return {
@@ -36,17 +37,11 @@ export default {
         bgImgURL: HeaderBgImg,
         ...servicePageInfo.slogan
       },
-      pageInfo: {
-        ...servicePageInfo.info
-      }
+      pageInfo: servicePageInfo.info
     }
   }
 }
 </script>
 
 <style lang="stylus">
-.temp
-  padding 100px 0
-  font-weight 700
-  font-size 24px
 </style>

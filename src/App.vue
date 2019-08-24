@@ -2,15 +2,17 @@
 <div id="app">
   <router-view />
   <base-footer />
+  <back-top />
 </div>
 </template>
 
 <script>
 import Footer from '@/components/common/Footer'
+import BackTop from '@/components/common/BackTop'
 
 export default {
   name: 'App',
-  components: { BaseFooter: Footer },
+  components: { BaseFooter: Footer, BackTop },
   beforeCreate () {
     if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
       // TODO 待域名确定修改
@@ -79,7 +81,7 @@ hr
 .module
   width 1200px
   margin 0 auto
-  border-radius 0 0 12px 12px
+  border-radius 12px
   margin-bottom 50px
   background-color $sub-bgcolor
 .content-box
