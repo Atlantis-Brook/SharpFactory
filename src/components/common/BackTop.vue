@@ -41,7 +41,7 @@ export default {
   mounted () {
     window.addEventListener('scroll', this.isShow)
   },
-  willDestroy () {
+  beforeDestroy () {
     window.removeEventListener('scroll', this.isShow)
   }
 }

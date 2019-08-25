@@ -29,7 +29,7 @@ const loadPrompt = {
 }
 
 // 页面滑动距离，显示“返回顶部”按钮
-const backTopX = 500
+const backTopX = 200
 
 // 点击“随便看看”按钮，页面滑动距离
 const browseX = 760

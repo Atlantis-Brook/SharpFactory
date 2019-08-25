@@ -31,6 +31,7 @@ html
   color $font-color
   line-height 1.5em
   background-color $main-bgcolor
+  overflow-x hidden
 body
   margin 0
   min-height 100vh
