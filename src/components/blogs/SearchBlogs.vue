@@ -11,10 +11,9 @@
     </div>
     <span class="vertical-line"></span>
     <div class="search-box">
-      <input class="keyword" type="text" placeholder="请输入关键字">
-      <input class="author" type="text" placeholder="请选择作者">   
+      <input class="keyword" type="text" placeholder="请输入关键字" v-model="search.key">
+      <input class="author" type="text" placeholder="请选择作者" v-model="search.user">   
       <div class="button">
-        <span>SEARCH</span>
       </div>
     </div>
   </div>
@@ -26,8 +25,24 @@ export default {
   name: 'SearchBlogs',
   data () {
     return {
-      
+      search:{
+        key:'',
+        user:''
+      }
     }
+  },
+  watch:{
+        search:{
+        handler(newValue,oldValue){
+          this.search = newValue;
+          this.$parent.search = this.search;
+          console.log(this.search);
+        },
+        deep:true
+      }
+  },
+  methods:{
+
   }
 }
 </script>

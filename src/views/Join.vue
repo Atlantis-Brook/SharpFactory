@@ -17,7 +17,7 @@
       </section>
       <section>
         <div>联系方式</div>
-        <label><span>{{ word.email }}</span><input type="text"  v-model="form.email"></label>
+        <label><span>{{ word.qq }}</span><input type="text"  v-model="form.qq"></label>
         <label><span>{{ word.tel }}</span><input type="text"  v-model="form.tel"></label>
       </section>
       <section>
@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import { joinForm } from '@/api'
+import Axios from 'axios'
 export default {
   name: 'JoinPage',
   data () {
@@ -47,8 +49,8 @@ export default {
         name: '姓名',
         gender: '性别',
         school: '学校',
-        grade: '专业年级',
-        email: 'Email',
+        grade: '专业/年级',
+        qq: 'QQ',
         tel: 'TEL',
         whyJoin: '为什么加入工作室',
         whatKnown: '有何相关基础',
@@ -59,12 +61,18 @@ export default {
         gender: '',
         school: '',
         grade: '',
-        email: '',
+        qq: '',
         tel: '',
         whyJoin: '',
         whatKnown: '',
         whatWillGet: ''
-      }
+      },
+      url:joinForm
+    }
+  },
+  watch:{
+    form(newValue,oldValue){
+      this.form = newValue;
     }
   },
   methods: {
@@ -94,6 +102,11 @@ export default {
         return
       }
       // TODO 将填写数据提交到后台
+      Axios.post(this.url,this.form)
+        .then(window.alert(`提交完成！`))
+        .catch(error => console.error(this.error))
+       .finally(this.$router.push('/'));
+        return
     },
     /**
      * 重置

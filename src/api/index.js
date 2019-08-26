@@ -15,7 +15,11 @@ const hotNewsList = '/news/hotNewsList'
 const ourNewsList = '/news/ourNewsList'
 //blog详情数据
 const blogDetails = '/blog/detail'
+//blog搜索
+const blogSearch = '/blog/search'
 //ourNew详情数据
 const ourNewsDetails = '/news/ourNewsDetail'
+//join表单提交
+const joinForm = '/join/joinForm'
 
-export { baseUrl, blogList, ourNewsList, hotNewsList, hackerNewsList, blogDetails, ourNewsDetails}
+export { baseUrl, blogList, ourNewsList, hotNewsList, hackerNewsList, blogDetails, ourNewsDetails, joinForm, blogSearch}

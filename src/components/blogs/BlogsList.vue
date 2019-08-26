@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { blogList } from '@/api'
+import { blogList, blogSearch } from '@/api'
 
 import Title from '@/components/common/Title'
 import DataItem from '@/components/common/DataItem'
@@ -28,6 +28,12 @@ import Loadding from '@/components/common/Loadding'
 export default {
   name: 'BlogsList',
   components: { BaseTitle: Title, DataItem, MoPaging, Loadding },
+  props:{
+    search:{
+      type: Object,
+      default:() => new Object
+    }
+  },
   data () {
     return {
       titleData: {
@@ -43,8 +49,9 @@ export default {
         count:1
       },
       theData:{},
-      
     }
+  },
+  computed:{
   },
   watch:{
     theData(newValue,oldValue){
@@ -52,7 +59,18 @@ export default {
     },
     params(newValue,oldValue){
       this.params = newValue;
+    },
+    search:{
+      handler(newValue,oldValue){
+        this.$set(this.params,'key',newValue.key);
+        this.$set(this.params,'user',newValue.user);
+        this.tab = 'search';
+        this.url = blogSearch;
+      },
+      deep:true
     }
+  },
+  mounted(){
   },
   methods:{
     change(data){

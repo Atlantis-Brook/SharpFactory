@@ -69,6 +69,9 @@ export default {
         .finally(() => this.loadding = false)
       },
       deep:true
+    },
+    url(newValue,oldValue){
+      this.url = newValue;
     }
   },
 

@@ -26,11 +26,11 @@ export default {
   props: ['title', 'synopsis', 'year', 'month', 'day','id','url','tab'],
   methods:{
     goto(){
-      console.log(this.tab);
       switch (this.tab) {
         case "hackerNews":
           window.open(this.url);
           break;
+        case "search":
         case "blog":
           this.$router.push({
             path:'/blogs/details',

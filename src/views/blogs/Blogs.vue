@@ -5,7 +5,7 @@
 <template>
 <div>
   <search-blogs />
-  <blogs-list />
+  <blogs-list :search='search' />
 </div>
 </template>
 
@@ -18,6 +18,23 @@ export default {
   components: {
     SearchBlogs,
     BlogsList
+  },
+  data(){
+    return {
+      search:{}
+    }
+  },
+  watch:{
+      search:{
+        handler(newValue,oldValue){
+          this.search = newValue;
+          console.log(this.search);
+        },
+        deep:true
+      }
+  },
+  methods:{
+  
   }
 }
 </script>

@@ -40,6 +40,7 @@ export default {
   },
   created () {
      switch (this.tab) {
+       case "search":
        case "blog":
          this.url = blogDetails;
          break;
@@ -56,7 +57,7 @@ export default {
       this.url = newValue;
     },
     theData(newValue,oldValue){
-      if(this.tab == "blog"){
+      if(this.tab == "blog" || this.tab == "search"){
         this.theData = newValue.blog[0];
       }
       if(this.tab == "ourNews"){
