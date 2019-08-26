@@ -19,7 +19,7 @@ class BlogController extends Controller {
      */
     async detail() {
         const ctx = this.ctx;
-        const blogId = ctx.query.id;
+        const blogId = Number(ctx.query.id);
         let blog = await ctx.model.Blog.findAll({
             where: {
                 'id': blogId
@@ -96,12 +96,55 @@ class BlogController extends Controller {
      * Parameters:
      *      user:获取搜索的作者
      *      keyWords:获取搜索的内容
+     *      currentPage:分页查询的当前页码
+     *      pageSize:每页显示的条目数量
+     *      count:查询总条目数量
+     *      rows:查询内容
      * Return:查询结果--Object
      */
     async blogSearch(){
         const ctx = this.ctx;
-        const user = ctx || "%%";
-        const keyWords = ctx || "%%";
+        let user,keyWords;
+        if (ctx.query.user == "" && ctx.query.key == "") {
+            user = ctx.query.user;
+            keyWords = ctx.query.key;
+        }
+        else{
+            user = ctx.query.user == "" ? "qiyrowmla;c/,c'skdfhlnchdsuif":ctx.query.user;
+            keyWords = ctx.query.key == "" ? "qiyrowmla;c/,c'skdfhlnchdsuif":ctx.query.key;
+        }
+        const currentPage = Number(ctx.query.count);
+        const pageSize = Number(ctx.query.pageSize); 
+        const {  
+            count,
+            rows
+        } = await ctx.model.Blog.findAndCountAll({
+            where:{
+                $or:[{
+                    user:{
+                        $like:'%'+user+'%'
+                    }},
+                    {
+                    title:{
+                        $like:'%'+keyWords+'%'
+                    }},
+                    {
+                    synopsis:{
+                        $like:'%'+keyWords+'%'
+                    }}]
+               
+                
+                
+            },
+            offset: (currentPage - 1) * pageSize,
+            limit: pageSize
+        });
+        for (let index = 0; index < rows.length; index++) {
+            rows[index].dataValues.year = rows[index].created_at.getFullYear();
+            rows[index].dataValues.month = rows[index].created_at.getMonth()+1;
+            rows[index].dataValues.day = rows[index].created_at.getDate();
+          }
+        ctx.body = {rows:rows,count:count};
 
     }
 
