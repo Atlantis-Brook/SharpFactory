@@ -103,7 +103,7 @@ export default {
       }
       // TODO 将填写数据提交到后台
       Axios.post(this.url,this.form)
-        .then(window.alert(`提交完成！`))
+        .then(window.alert(`提交成功！`))
         .catch(error => console.error(this.error))
        .finally(this.$router.push('/'));
         return

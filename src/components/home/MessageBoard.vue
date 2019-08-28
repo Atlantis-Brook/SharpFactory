@@ -10,16 +10,15 @@
     <div class="content-box">
       <div class="left">
         <div class="input-form">
-          <input class="text-input name-input" type="text" placeholder="称呼" /> 
-          <input class="text-input email-input" type="text" placeholder="邮箱" />
-          <textarea class="text-input message-input" placeholder="留言" />
+          <input class="text-input name-input" type="text" placeholder="称呼" v-model="form.name" /> 
+          <input class="text-input email-input" type="text" placeholder="邮箱" v-model="form.email"/>
+          <textarea class="text-input message-input" placeholder="留言" v-model="form.message" />
           <p>
-            <input class="checkbox" id="checkbox" type="checkbox" />
-            <label for="checkbox"></label>
+            <input id="checkbox" type="radio" v-model="form.radio"  value="true"/>
             <span>我已阅读并同意<a href="#">《隐私政策》</a>。</span>
           </p>
         </div>
-        <div class="button">SEND MESSAGE</div>
+        <div class="button" @click="submit()">SEND MESSAGE</div>
       </div>
       <div class="right">
         <div class="address-card">
@@ -37,7 +36,10 @@
 
 <script>
 import { contactTitle, ourInfo } from '@/assets/js/data.js'
+import { messageForm } from '@/api'
+
 import Title from '@/components/common/Title'
+import Axios from 'axios'
 
 export default {
   name: 'MessageBoard',
@@ -45,8 +47,45 @@ export default {
   data () {
     return {
       titleData: contactTitle,
-      ourInfo
+      ourInfo,
+      url: messageForm,
+      word:{
+        name:'称呼',
+        email:'邮箱',
+        message:'留言',
+        radio:'我已阅读并同意《隐私政策》'
+      },
+      form:{
+        name:'',
+        email:'',
+        message:'',
+        radio:''
+      }
     }
+  },
+  methods:{
+    verification () {
+      for (const key in this.form) {
+        if (this.form.hasOwnProperty(key)) {
+          const value = this.form[key]
+          if (value.trim() === '') return key
+        }
+      }
+      return false
+    },
+    submit () {
+      const verif = this.verification()
+      if (verif) {
+        window.alert(`请填写 ${this.word[verif]}！`)
+        return
+      }
+      // TODO 将填写数据提交到后台
+      Axios.post(this.url,this.form)
+        .then(window.alert(`提交成功！`))
+        .catch(error => console.error(this.error))
+       .finally(this.$router.push('/'));
+        return
+    },
   }
 }
 </script>

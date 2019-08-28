@@ -21,5 +21,6 @@ const blogSearch = '/blog/search'
 const ourNewsDetails = '/news/ourNewsDetail'
 //join表单提交
 const joinForm = '/join/joinForm'
-
-export { baseUrl, blogList, ourNewsList, hotNewsList, hackerNewsList, blogDetails, ourNewsDetails, joinForm, blogSearch}
+//留言板数据提交
+const messageForm = 'message/messageForm'
+export { baseUrl, blogList, ourNewsList, hotNewsList, hackerNewsList, blogDetails, ourNewsDetails, joinForm, blogSearch ,messageForm}

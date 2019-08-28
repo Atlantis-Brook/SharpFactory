@@ -10,7 +10,7 @@
     <div class="projects content-box">
       <div class="project" v-for="(project, index) of projects" :key="index">
         <div class="top">
-          <img :src="project.imgsrc" :alt="project.title">
+          <!-- <img :src="project.imgsrc" :alt="project.title"> -->
         </div>
         <div class="bottom">
           <div class="left">
