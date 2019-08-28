@@ -12,5 +12,6 @@ module.exports = app => {
   router.get('/news/ourNewsList',controller.news.ourNewsList);
   router.get('/news/ourNewsDetail', controller.news.ourNewsDetails);
   router.post('/join/joinForm', controller.join.joinForm);
+  router.post('/message/messageForm',controller.message.messageForm);
   //router.get('/blog/write',controller.blog.write);
 };
