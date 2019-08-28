@@ -99,7 +99,7 @@ export default new Router({
     {
       path: '/404',
       name: 'NotFound',
-      component: () => import('@/views/notFound.vue')
+      component: () => import('@/views/NotFound.vue')
     },
     {
       path: '*',
