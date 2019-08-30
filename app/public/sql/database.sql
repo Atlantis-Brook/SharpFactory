@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `user`(
   `user` VARCHAR(120) NOT NULL COMMENT '用户名',
   `avatar` VARCHAR(120) NOT NULL DEFAULT '/usr/img' COMMENT '头像',
   PRIMARY KEY (`id`),
-  KEY (`user_id`),
+  KEY (`user_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户基本信息表' AUTO_INCREMENT=1;
 
 -- 导出 user_auths 表
