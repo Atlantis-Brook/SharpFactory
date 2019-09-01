@@ -30,7 +30,7 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-SharpFactory",
+    "start": "egg-scripts start --daemon --title=egg-server-SharpFactory --ignore-stderr",
     "stop": "egg-scripts stop --title=egg-server-SharpFactory",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",

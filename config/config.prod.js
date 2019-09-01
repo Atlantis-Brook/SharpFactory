@@ -1,4 +1,5 @@
 'use strict';
+
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const operatorsAliases = {
@@ -49,9 +50,9 @@ exports.sequelize = {
     // 用户名
     username: 'root',
     // 密码
-    password: '539451',
+    password: 'ShaBiTX539451-+',
     // 数据库名
-    database: 'sharpfactory',
+    database: 'SharpFactory',
     //开启操作符
     operatorsAliases: operatorsAliases,
     pool: {
@@ -65,4 +66,3 @@ exports.sequelize = {
     },
     timezone: '+08:00', // 东八时区
   };
-

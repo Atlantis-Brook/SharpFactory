@@ -32,5 +32,4 @@ module.exports = appInfo => {
     domainWhiteList: ['*'],
   };
   return config;
-
-};
+}
