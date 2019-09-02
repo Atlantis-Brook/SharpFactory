@@ -50,7 +50,7 @@ exports.sequelize = {
     // 用户名
     username: 'root',
     // 密码
-    password: 'ShaBiTX539451-+',
+    password: '539451',
     // 数据库名
     database: 'SharpFactory',
     //开启操作符

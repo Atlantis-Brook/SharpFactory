@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `undertake_project`(
   `gender` VARCHAR(120) NOT NULL COMMENT '性别',
   `school` VARCHAR(120) NOT NULL COMMENT '学校',
   `grade` VARCHAR(120) NOT NULL COMMENT '专业/年级',
-  `phone` VARCHAR(120) NOT NULL COMMENT '联系电话',
+  `tel` VARCHAR(120) NOT NULL COMMENT '联系电话',
   `qq` VARCHAR(120) NOT NULL COMMENT 'QQ',
   `whyJoin` TEXT NOT NULL COMMENT '加入原因',
   `whatKnown` TEXT NOT NULL COMMENT '相关基础',
