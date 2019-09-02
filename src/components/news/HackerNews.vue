@@ -33,7 +33,7 @@ export default {
     return {
       titleData: hackerNewsTitle,
       url:hackerNewsList,
-      tab:"hackerNews",
+      tab:'hackerNews',
       params:{
         pageSize:5,
         count:1

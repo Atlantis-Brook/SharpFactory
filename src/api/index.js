@@ -3,7 +3,7 @@
  */
 
 // 后台数据接口地址
-const baseUrl = '//127.0.0.1:7001/'
+const baseUrl = '//127.0.0.1:7001'
 
 // 博客列表数据
 const blogList = '/blog/list'

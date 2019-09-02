@@ -9,7 +9,7 @@
     <base-title v-bind="titleData" />
     <div class="content-box">
       <loadding :url="url">
-        <data-item v-bind="item" v-for="item of theData.rows" :key="item.id" />
+        <data-item v-bind="item" v-for="item of theData.rows" :key="item.id" :tab="tab"/>
       </loadding>
     </div>
     <router-link class="button" to="/news" >MORE NEWS</router-link>
@@ -32,6 +32,7 @@ export default {
     return {
       titleData: newsTitle,
       url: hackerNewsList,
+      tab:'hackerNews',
       theData:{rows:[]}
     }
   }
