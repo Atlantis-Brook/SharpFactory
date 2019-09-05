@@ -178,7 +178,7 @@ const ourInfo = {
 const copyright = 'Copyright ©2019 SharpFactory All rights reserved.'
 
 // 备案信息
-const recordCode = '京 ICP 备10217899 号'
+const recordCode = '黔 ICP 备 18007928号-2'
 
 export {
   topNav,
