@@ -170,8 +170,8 @@ const processes = [
 
 // 工作室信息
 const ourInfo = {
-  email: 'info@example.com',
-  address: '贵州省贵阳市花溪区贵安新区数字经济产业园4号0610室'
+  email: '1553237892@qq.com',
+  address: '贵州省贵阳市花溪区贵州大学崇义楼543'
 }
 
 // 版权声明
