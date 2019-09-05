@@ -132,9 +132,6 @@ class BlogController extends Controller {
                     synopsis:{
                         $like:'%'+keyWords+'%'
                     }}]
-               
-                
-                
             },
             offset: (currentPage - 1) * pageSize,
             limit: pageSize
