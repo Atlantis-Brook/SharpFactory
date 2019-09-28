@@ -11,7 +11,7 @@
       <p class="title">{{ article.title }}</p>
       <span class="cut-line"></span>
       <div class="content">
-        <p v-for="(item, index) of article.content" :key="index">{{ item }}</p>
+         <p v-for="(item, index) of article.content" :key="index">{{ item }}</p>
       </div>
     </article>
     <router-link class="button" to="/about">MORE ABOUT US</router-link>
